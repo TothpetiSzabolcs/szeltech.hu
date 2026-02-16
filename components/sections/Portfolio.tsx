@@ -35,7 +35,7 @@ export function Portfolio() {
             >
               <Image
                 src={item.src}
-                alt={t(`items.${i}`)}
+                alt={""}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
               />

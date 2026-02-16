@@ -58,7 +58,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20 tracking-widest uppercase">
-            © {new Date().getFullYear()} Szélig Tech. {t("rights")}
+            © {new Date().getFullYear()} SzelTech. {t("rights")}
           </p>
           <div className="flex items-center gap-2">
             <span className="block w-4 h-px bg-gold/40" />

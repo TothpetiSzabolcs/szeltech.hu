@@ -43,7 +43,7 @@ export function Navbar() {
           href={`/${currentLocale}`}
           className="text-lg font-black tracking-[0.12em] uppercase text-steel-chrome"
         >
-          Szélig <span className="text-gold">Tech</span>
+          Szel<span className="text-gold">Tech</span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-10 list-none">

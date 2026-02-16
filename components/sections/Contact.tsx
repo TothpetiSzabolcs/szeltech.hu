@@ -152,7 +152,7 @@ export function Contact() {
                 {t("quote")}
               </p>
               <p className="mt-3 text-[11px] font-bold tracking-widest uppercase text-gold/50">
-                — Szélig Tech
+                — SzelTech
               </p>
             </div>
           </div>
