@@ -13,9 +13,9 @@
   },
   "hero": {
     "eyebrow": "CNC Turning & Milling",
-    "title1": "Precision.",
-    "title2": "On Time.",
-    "title3": "Reliable.",
+    "title1": "Precise Work.",
+    "title2": "Fast Delivery.",
+    "title3": "Reliable Partner.",
     "subtitle": "Custom and serial CNC part manufacturing to the highest quality standards. Rush orders welcome — flexible and fast.",
     "cta_primary": "Request a Quote",
     "cta_secondary": "Our Work"
@@ -25,10 +25,10 @@
     "title": "A team",
     "titleHighlight": "you can count on.",
     "p1": "Our focus is on long-term, reliable partnerships. We respond flexibly to our partners' needs, whether it's urgent work or special, custom orders.",
-    "p2": "Our work is always precise and delivered on time, ensuring that future partners can rely on a skilled and flexible team when fast and dependable solutions are required.",
+    "p2": "Focused on deadlines and quality, our future partners can be confident that they are working with a team built on expertise and flexibility, ready to deliver.",
     "p3": "Our experience in CNC turning and milling guarantees that every project is carried out to the highest quality standards.",
     "mini": "Our future partners can be confident that they are working with a skilled and flexible team when fast and precise solutions are required.",
-    "badge": "Quality guaranteed",
+    "badge": "Industrial Quality",
     "highlights": [
       "Flexible, rapid response",
       "Precise, on-time delivery",
@@ -42,7 +42,7 @@
     "eyebrow": "Services",
     "title": "What we",
     "titleHighlight": "offer",
-    "description": "Complete CNC solutions from manufacturing to assembly.",
+    "description": "Complete solutions from manufacturing to assembly.",
     "items": {
       "cnc_forgacsolas": {
         "title": "CNC Machining",
@@ -86,7 +86,7 @@
     "eyebrow": "Our Work",
     "title": "Completed",
     "titleHighlight": "parts",
-    "description": "A few examples of our precision CNC machining projects.",
+    "description": "A few examples of our machining projects.",
     "items": [
       "Shaft assembly",
       "Cylindrical housing",
@@ -136,7 +136,7 @@
     }
   },
   "footer": {
-    "tagline": "Precision CNC turning and milling. A reliable partner in industrial part manufacturing.",
+    "tagline": "CNC turning and milling. A reliable partner in industrial part manufacturing.",
     "sitemap": "Sitemap",
     "contact": "Contact",
     "company_name": "Szélig Zoltán Sole Proprietorship",
@@ -151,6 +151,6 @@
   "stats": {
     "experience": "Years of experience",
     "parts": "Parts manufactured",
-    "deadline": "On-time delivery"
+    "deadline": "Expertise"
   }
 }

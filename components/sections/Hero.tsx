@@ -84,7 +84,7 @@ export function Hero() {
             <div className="mt-14 flex gap-8 border-t border-white/5 pt-8">
               {[
                 { value: "5+", label: tStats("experience") },
-                { value: "90K+", label: tStats("parts") },
+                { value: "500K+", label: tStats("parts") },
                 { value: "100%", label: tStats("deadline") },
               ].map((stat) => (
                 <div key={stat.label}>

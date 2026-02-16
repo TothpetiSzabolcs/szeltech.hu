@@ -13,9 +13,9 @@
   },
   "hero": {
     "eyebrow": "CNC-Drehen & Fräsen",
-    "title1": "Präzision.",
-    "title2": "Pünktlich.",
-    "title3": "Zuverlässig.",
+    "title1": "Präzise Arbeit.",
+    "title2": "Schnelle Lieferung.",
+    "title3": "Zuverlässiger Partner.",
     "subtitle": "Individuelle und serielle CNC-Fertigung nach höchsten Qualitätsstandards. Auch Eilaufträge — flexibel und schnell.",
     "cta_primary": "Angebot anfragen",
     "cta_secondary": "Referenzen"
@@ -25,10 +25,10 @@
     "title": "Ein Team,",
     "titleHighlight": "auf das Sie zählen können.",
     "p1": "Bei uns stehen langfristige, verlässliche Partnerschaften im Mittelpunkt. Wir reagieren flexibel auf die Bedürfnisse unserer Partner, sei es bei eiligen Aufträgen oder besonderen, individuellen Projekten.",
-    "p2": "Unsere Arbeit wird stets präzise und termingerecht ausgeführt, sodass auch unsere zukünftigen Partner sicher sein können, dass sie mit einem kompetenten und flexiblen Team zusammenarbeiten.",
+    "p2": "Mit Fokus auf Termine und Qualität können unsere zukünftigen Partner sicher sein, dass sie mit einem Team zusammenarbeiten, das auf Fachkompetenz und Flexibilität aufbaut und einsatzbereit ist.",
     "p3": "Unsere Erfahrung in CNC-Dreh- und Fräsarbeiten gewährleistet, dass jedes Projekt nach den höchsten Qualitätsstandards umgesetzt wird.",
     "mini": "Unsere zukünftigen Partner können sich darauf verlassen, dass sie mit einem kompetenten und flexiblen Team zusammenarbeiten, wenn schnelle und präzise Lösungen benötigt werden.",
-    "badge": "Qualität garantiert",
+    "badge": "Industrielle Qualität",
     "highlights": [
       "Flexible, schnelle Reaktion",
       "Präzise, termingerechte Lieferung",
@@ -42,7 +42,7 @@
     "eyebrow": "Leistungen",
     "title": "Was wir",
     "titleHighlight": "anbieten",
-    "description": "Komplette CNC-Lösungen von der Fertigung bis zur Montage.",
+    "description": "Komplette Lösungen von der Fertigung bis zur Montage.",
     "items": {
       "cnc_forgacsolas": {
         "title": "CNC-Zerspanung",
@@ -86,7 +86,7 @@
     "eyebrow": "Referenzen",
     "title": "Unsere",
     "titleHighlight": "Bauteile",
-    "description": "Einige Beispiele unserer präzisen CNC-Bearbeitungsprojekte.",
+    "description": "Einige Beispiele unserer Bearbeitungsprojekte.",
     "items": [
       "Wellenbaugruppe",
       "Zylindrisches Gehäuse",
@@ -151,6 +151,6 @@
   "stats": {
     "experience": "Jahre Erfahrung",
     "parts": "Gefertigte Bauteile",
-    "deadline": "Termintreue"
+    "deadline": "Sachverstand"
   }
 }

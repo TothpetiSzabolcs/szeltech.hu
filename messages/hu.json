@@ -14,9 +14,9 @@
   "hero": {
     "eyebrow": "CNC Esztergálás & Marás",
     "title1": "Precízió.",
-    "title2": "Határidőre.",
-    "title3": "Megbízhatóan.",
-    "subtitle": "Egyedi és sorozatos CNC alkatrészgyártás a legmagasabb minőségi elvárások szerint. Sürgős munkák is — rugalmasan, gyorsan.",
+    "title2": "Gyors Szállítás.",
+    "title3": "Megbízható Partner.",
+    "subtitle": "Egyedi és sorozatgyártás a legmagasabb minőségi elvárások szerint. Sürgős munkák is — rugalmasan, gyorsan.",
     "cta_primary": "Ajánlatkérés",
     "cta_secondary": "Munkáink"
   },
@@ -25,10 +25,10 @@
     "title": "Egy csapat,",
     "titleHighlight": "akire számíthatsz.",
     "p1": "Nálunk a hosszú távú, megbízható együttműködések állnak a középpontban. Partnereink igényeire rugalmasan reagálunk, legyen szó sürgős munkáról vagy különleges, egyedi megrendelésről.",
-    "p2": "Munkánk mindig precíz és határidőre elkészült, így a jövőbeli partnereink is biztosak lehetnek abban, hogy egy szakértelemre és rugalmasságra építő, bevethető csapattal dolgoznak együtt.",
+    "p2": "Fókuszban a határidő és a minőség, így a jövőbeli partnereink is biztosak lehetnek abban, hogy egy szakértelemre és rugalmasságra építő, bevethető csapattal dolgoznak együtt.",
     "p3": "CNC esztergálásban és marásban szerzett tapasztalatunk biztosítja, hogy minden projekt a legmagasabb minőségi elvárások szerint valósuljon meg.",
     "mini": "A jövőbeli partnereink is biztosak lehetnek abban, hogy szakértelemre és rugalmasságra építő, megbízható csapattal dolgoznak együtt, amikor gyors és pontos megoldásra van szükség.",
-    "badge": "Minőség garantált",
+    "badge": "Ipari Minőség",
     "highlights": [
       "Rugalmas, gyors reagálás",
       "Precíz, határidőre elkészített munkák",
@@ -42,7 +42,7 @@
     "eyebrow": "Szolgáltatások",
     "title": "Amit",
     "titleHighlight": "kínálunk",
-    "description": "Komplex CNC megoldások a gyártástól az összeállításig.",
+    "description": "Komplex megoldások a gyártástól az összeállításig.",
     "items": {
       "cnc_forgacsolas": {
         "title": "CNC forgácsolás",
@@ -86,7 +86,7 @@
     "eyebrow": "Munkáink",
     "title": "Elkészült",
     "titleHighlight": "alkatrészeink",
-    "description": "Néhány példa a nálunk megvalósult precíziós CNC megmunkálási projektekből.",
+    "description": "Néhány példa a nálunk megvalósult megmunkálási projektekből.",
     "items": [
       "Termálvíz szabályozó",
       "Rozsdamentes Tömítőgyűrű",
@@ -136,7 +136,7 @@
     }
   },
   "footer": {
-    "tagline": "Precíziós CNC esztergálás és marás. Megbízható partner az ipari alkatrészgyártásban.",
+    "tagline": "CNC esztergálás és marás. Megbízható partner az ipari alkatrészgyártásban.",
     "sitemap": "Oldaltérkép",
     "contact": "Elérhetőség",
     "company_name": "Szélig Zoltán Egyéni Vállalkozó",
@@ -151,6 +151,6 @@
   "stats": {
     "experience": "Év tapasztalat",
     "parts": "Elkészített alkatrész",
-    "deadline": "Határidő tartás"
+    "deadline": "Szakértelem"
   }
 }
