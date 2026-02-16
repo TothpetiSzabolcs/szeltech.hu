@@ -87,15 +87,7 @@
     "title": "Elkészült",
     "titleHighlight": "alkatrészeink",
     "description": "Néhány példa a nálunk megvalósult precíziós CNC megmunkálási projektekből.",
-    "items": [
-      "Tengelyszerelvény",
-      "Hengeres ház",
-      "Csavarorsó",
-      "Karimás lemez",
-      "Gyűrű elemek",
-      "Penge alkatrészek",
-      "Vegyes alkatrészek"
-    ]
+    "items": []
   },
   "contact": {
     "eyebrow": "Kapcsolat",

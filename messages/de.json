@@ -87,15 +87,7 @@
     "title": "Unsere",
     "titleHighlight": "Bauteile",
     "description": "Einige Beispiele unserer präzisen CNC-Bearbeitungsprojekte.",
-    "items": [
-      "Wellenbaugruppe",
-      "Zylindrisches Gehäuse",
-      "Gewindespindel",
-      "Flanschplatte",
-      "Ringelemente",
-      "Klingenkomponenten",
-      "Verschiedene Bauteile"
-    ]
+    "items": []
   },
   "contact": {
     "eyebrow": "Kontakt",
