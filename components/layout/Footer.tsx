@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <p className="text-xl font-black tracking-[0.12em] uppercase text-steel-chrome mb-4">
-              Szélig <span className="text-gold">Tech</span>
+              Szel<span className="text-gold">Tech</span>
             </p>
             <p className="text-sm text-steel-dark/70 leading-relaxed max-w-xs mb-4">
               {t("tagline")}

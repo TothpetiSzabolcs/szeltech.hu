@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const { name, company, email, phone, message } = body;
 
     const { data, error } = await resend.emails.send({
-      from: "Szélig CNC Website <onboarding@resend.dev>",
+      from: "SzelTech Website <onboarding@resend.dev>",
       to: ["szeligfem@gmail.com"],
       replyTo: email,
       subject: `Új ajánlatkérés: ${name}${company ? ` (${company})` : ""}`,

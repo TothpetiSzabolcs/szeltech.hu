@@ -38,15 +38,16 @@ export function Navbar() {
           : "bg-transparent",
       )}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-16 flex items-center justify-between h-16 lg:h-20">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 flex items-center justify-between h-16 lg:h-20">
         <Link
           href={`/${currentLocale}`}
-          className="text-lg font-black tracking-[0.12em] uppercase text-steel-chrome"
+          className="text-lg font-black tracking-[0.12em] uppercase text-steel-chrome flex-shrink-0"
         >
           Szel<span className="text-gold">Tech</span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-10 list-none">
+        {/* Desktop nav links - 1186px+ */}
+        <ul className="hidden min-[1186px]:flex items-center gap-6 xl:gap-10 list-none">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -59,40 +60,47 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center gap-2 mr-4">
-          {routing.locales.map((loc) => (
-            <button
-              key={loc}
-              onClick={() => switchLocale(loc)}
-              className={clsx(
-                "text-[11px] font-bold tracking-widest uppercase px-2 py-1 transition-colors",
-                currentLocale === loc
-                  ? "text-gold"
-                  : "text-steel-dark hover:text-gold-light",
-              )}
-            >
-              {loc}
-            </button>
-          ))}
+        {/* Jobb oldali csoport: Nyelvválasztó + CTA/Hamburger */}
+        <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0 mr-8">
+          {/* Nyelvválasztó - MINDIG látható */}
+          <div className="flex items-center gap-1 sm:gap-2">
+            {routing.locales.map((loc) => (
+              <button
+                key={loc}
+                onClick={() => switchLocale(loc)}
+                className={clsx(
+                  "text-[10px] sm:text-[11px] font-bold tracking-widest uppercase px-1.5 sm:px-2 py-1 transition-colors",
+                  currentLocale === loc
+                    ? "text-gold"
+                    : "text-steel-dark hover:text-gold-light",
+                )}
+              >
+                {loc}
+              </button>
+            ))}
+          </div>
+
+          {/* Desktop CTA button - 1186px+ */}
+          <a
+            href="#kapcsolat"
+            className="hidden min-[1186px]:inline-flex items-center gap-2 px-6 py-2.5 text-[12px] font-bold tracking-[0.1em] uppercase bg-gradient-to-r from-gold to-gold-light text-bg clip-cut-all hover:opacity-90 transition-opacity"
+          >
+            {t("cta")}
+          </a>
+
+          {/* Mobile hamburger - <1186px */}
+          <button
+            className="min-[1186px]:hidden text-steel-dark hover:text-gold transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-
-        <a
-          href="#kapcsolat"
-          className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 text-[12px] font-bold tracking-[0.1em] uppercase bg-gradient-to-r from-gold to-gold-light text-bg clip-cut-all hover:opacity-90 transition-opacity"
-        >
-          {t("cta")}
-        </a>
-
-        <button
-          className="md:hidden text-steel-dark hover:text-gold transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
       </nav>
 
+      {/* Mobil menü - <1186px */}
       {mobileOpen && (
-        <div className="md:hidden bg-bg-2 border-t border-white/5 px-6 py-6 flex flex-col gap-5">
+        <div className="min-[1186px]:hidden bg-bg-2 border-t border-white/5 px-6 py-6 flex flex-col gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -103,23 +111,13 @@ export function Navbar() {
               {t(link.labelKey)}
             </Link>
           ))}
-          <div className="flex gap-3 pt-2 border-t border-white/5">
-            {routing.locales.map((loc) => (
-              <button
-                key={loc}
-                onClick={() => {
-                  switchLocale(loc);
-                  setMobileOpen(false);
-                }}
-                className={clsx(
-                  "text-[11px] font-bold tracking-widest uppercase px-2 py-1",
-                  currentLocale === loc ? "text-gold" : "text-steel-dark",
-                )}
-              >
-                {loc}
-              </button>
-            ))}
-          </div>
+          <a
+            href="#kapcsolat"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-[12px] font-bold tracking-[0.1em] uppercase bg-gradient-to-r from-gold to-gold-light text-bg clip-cut-all hover:opacity-90 transition-opacity"
+            onClick={() => setMobileOpen(false)}
+          >
+            {t("cta")}
+          </a>
         </div>
       )}
     </header>

@@ -51,15 +51,15 @@ export function Hero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full pt-24 lg:pt-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-24">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 xl:gap-20 items-center min-h-screen py-24">
           {/* Text */}
-          <div>
+          <div className="text-center xl:text-left">
             <div className="inline-flex items-center gap-3 text-[11px] font-semibold tracking-[0.2em] uppercase text-gold mb-6">
               <span className="block w-8 h-px bg-gold" />
               {t("eyebrow")}
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[72px] font-black leading-[1.05] sm:leading-[0.95] md:leading-[1] tracking-tight text-steel-chrome mb-7">
+            <h1 className="text-[42px] sm:text-6xl md:text-7xl xl:text-[72px] font-black leading-[1.1] sm:leading-[1.1] md:leading-[1.2] tracking-tight text-steel-chrome mb-7">
               {t("title1")}
               <br />
               <em className="not-italic text-gradient-gold">{t("title2")}</em>
@@ -67,11 +67,11 @@ export function Hero() {
               <span className="inline-block">{t("title3")}</span>
             </h1>
 
-            <p className="text-base font-light text-steel-dark leading-relaxed max-w-md mb-10">
+            <p className="text-base font-light text-steel-dark leading-relaxed max-w-md mb-10 mx-auto xl:mx-0">
               {t("subtitle")}
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center xl:justify-start">
               <Button href="#kapcsolat" variant="primary">
                 {t("cta_primary")} <ArrowRight size={15} />
               </Button>
@@ -81,17 +81,17 @@ export function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="mt-14 flex gap-8 border-t border-white/5 pt-8">
+            <div className="mt-14 flex gap-8 border-t border-white/5 pt-8 justify-center xl:justify-start">
               {[
                 { value: "5+", label: tStats("experience") },
                 { value: "500K+", label: tStats("parts") },
                 { value: "100%", label: tStats("deadline") },
               ].map((stat) => (
-                <div key={stat.label}>
+                <div key={stat.label} className="flex flex-col items-center xl:items-start">
                   <p className="text-3xl font-black text-gradient-gold leading-none mb-1">
                     {stat.value}
                   </p>
-                  <p className="text-[11px] font-semibold tracking-widest uppercase text-steel-dark/60">
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-steel-dark/60 text-center xl:text-left">
                     {stat.label}
                   </p>
                 </div>
@@ -163,8 +163,8 @@ export function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <a
-        href="#rolunk"
+      
+        <a href="#rolunk"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 hover:text-gold transition-colors animate-bounce"
         aria-label="Görgetés"
       >
