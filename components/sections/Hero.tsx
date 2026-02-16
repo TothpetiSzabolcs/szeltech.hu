@@ -10,7 +10,7 @@ import Image from "next/image";
 export function Hero() {
   const t = useTranslations("hero");
   const tStats = useTranslations("stats");
-  
+
   const [loadedImages, setLoadedImages] = useState({
     img1: false,
     img2: false,
@@ -23,7 +23,10 @@ export function Hero() {
   };
 
   return (
-    <section id="fooldal" className="relative min-h-screen flex items-center overflow-hidden bg-bg">
+    <section
+      id="fooldal"
+      className="relative min-h-screen flex items-center overflow-hidden bg-bg"
+    >
       {/* Background grid */}
       <div
         className="absolute inset-0"
@@ -33,19 +36,22 @@ export function Hero() {
             linear-gradient(90deg, rgba(192,160,96,0.04) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
-          maskImage: "radial-gradient(ellipse 70% 70% at 60% 50%, black 20%, transparent 80%)",
+          maskImage:
+            "radial-gradient(ellipse 70% 70% at 60% 50%, black 20%, transparent 80%)",
         }}
       />
 
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(192,160,96,0.06) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 60% at 60% 50%, rgba(192,160,96,0.06) 0%, transparent 70%)",
+        }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 w-full pt-24 lg:pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-screen py-24">
-
           {/* Text */}
           <div>
             <div className="inline-flex items-center gap-3 text-[11px] font-semibold tracking-[0.2em] uppercase text-gold mb-6">
@@ -53,12 +59,12 @@ export function Hero() {
               {t("eyebrow")}
             </div>
 
-            <h1 className="text-6xl md:text-7xl xl:text-[88px] font-black leading-[0.93] tracking-tight text-steel-chrome mb-7">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[88px] font-black leading-[1.05] sm:leading-[0.93] tracking-tight text-steel-chrome mb-7">
               {t("title1")}
               <br />
               <em className="not-italic text-gradient-gold">{t("title2")}</em>
               <br />
-              {t("title3")}
+              <span className="inline-block">{t("title3")}</span>
             </h1>
 
             <p className="text-base font-light text-steel-dark leading-relaxed max-w-md mb-10">
@@ -77,13 +83,17 @@ export function Hero() {
             {/* Stats */}
             <div className="mt-14 flex gap-8 border-t border-white/5 pt-8">
               {[
-                { value: "5+",  label: tStats("experience") },
+                { value: "5+", label: tStats("experience") },
                 { value: "90K+", label: tStats("parts") },
                 { value: "100%", label: tStats("deadline") },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-3xl font-black text-gradient-gold leading-none mb-1">{stat.value}</p>
-                  <p className="text-[11px] font-semibold tracking-widest uppercase text-steel-dark/60">{stat.label}</p>
+                  <p className="text-3xl font-black text-gradient-gold leading-none mb-1">
+                    {stat.value}
+                  </p>
+                  <p className="text-[11px] font-semibold tracking-widest uppercase text-steel-dark/60">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -153,7 +163,11 @@ export function Hero() {
       </div>
 
       {/* Scroll cue */}
-      <a href="#rolunk" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 hover:text-gold transition-colors animate-bounce" aria-label="Görgetés">
+      <a
+        href="#rolunk"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gold/40 hover:text-gold transition-colors animate-bounce"
+        aria-label="Görgetés"
+      >
         <ChevronDown size={28} />
       </a>
     </section>
