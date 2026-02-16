@@ -13,9 +13,9 @@
   },
   "hero": {
     "eyebrow": "CNC Esztergálás & Marás",
-    "title1": "Precízió.",
-    "title2": "Gyors Szállítás.",
-    "title3": "Megbízható Partner.",
+    "title1": "Minőség.",
+    "title2": "Határidő.",
+    "title3": "Megbízhatóság.",
     "subtitle": "Egyedi és sorozatgyártás a legmagasabb minőségi elvárások szerint. Sürgős munkák is — rugalmasan, gyorsan.",
     "cta_primary": "Ajánlatkérés",
     "cta_secondary": "Munkáink"
@@ -151,6 +151,6 @@
   "stats": {
     "experience": "Év tapasztalat",
     "parts": "Elkészített alkatrész",
-    "deadline": "Szakértelem"
+    "deadline": ""
   }
 }

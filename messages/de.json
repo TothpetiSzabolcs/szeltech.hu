@@ -13,9 +13,9 @@
   },
   "hero": {
     "eyebrow": "CNC-Drehen & Fräsen",
-    "title1": "Präzise Arbeit.",
-    "title2": "Schnelle Lieferung.",
-    "title3": "Zuverlässiger Partner.",
+    "title1": "Präzision.",
+    "title2": "Pünktlich.",
+    "title3": "Zuverlässig.",
     "subtitle": "Individuelle und serielle CNC-Fertigung nach höchsten Qualitätsstandards. Auch Eilaufträge — flexibel und schnell.",
     "cta_primary": "Angebot anfragen",
     "cta_secondary": "Referenzen"
@@ -151,6 +151,6 @@
   "stats": {
     "experience": "Jahre Erfahrung",
     "parts": "Gefertigte Bauteile",
-    "deadline": "Sachverstand"
+    "deadline": "Termintreue"
   }
 }
