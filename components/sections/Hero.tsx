@@ -59,7 +59,7 @@ export function Hero() {
               {t("eyebrow")}
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[88px] font-black leading-[1.05] sm:leading-[0.93] tracking-tight text-steel-chrome mb-7">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-[72px] font-black leading-[1.05] sm:leading-[0.95] md:leading-[1] tracking-tight text-steel-chrome mb-7">
               {t("title1")}
               <br />
               <em className="not-italic text-gradient-gold">{t("title2")}</em>
