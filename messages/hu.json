@@ -87,7 +87,15 @@
     "title": "Elkészült",
     "titleHighlight": "alkatrészeink",
     "description": "Néhány példa a nálunk megvalósult precíziós CNC megmunkálási projektekből.",
-    "items": []
+    "items": [
+      "Termálvíz szabályozó",
+      "Rozsdamentes Tömítőgyűrű",
+      "Trapézmenetes Emelő",
+      "Ütköző Pofa",
+      "Karima",
+      "Golyóscsap Kilincs",
+      "Gömbcsap Ház"
+    ]
   },
   "contact": {
     "eyebrow": "Kapcsolat",

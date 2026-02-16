@@ -87,7 +87,15 @@
     "title": "Completed",
     "titleHighlight": "parts",
     "description": "A few examples of our precision CNC machining projects.",
-    "items": []
+    "items": [
+      "Shaft assembly",
+      "Cylindrical housing",
+      "Screw spindle",
+      "Flange plate",
+      "Ring elements",
+      "Blade components",
+      "Various components"
+    ]
   },
   "contact": {
     "eyebrow": "Contact",
