@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #c0a060;
+  --color-gold-light: #d4b878;
+  --color-gold-bright: #e8c870;
+  --color-steel: #c8cfd8;
+  --color-steel-dark: #8c95a0;
+  --color-steel-chrome: #e8ecf0;
+  --color-bg: #0a0b0d;
+  --color-bg-2: #111318;
+  --color-bg-3: #181b21;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0b0d;
+  color: #e2e6ea;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #0a0b0d; }
+::-webkit-scrollbar-thumb { background: #c0a060; border-radius: 3px; }
+
+@layer utilities {
+  .clip-cut-br {
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  }
+  .clip-cut-tl {
+    clip-path: polygon(16px 0, 100% 0, 100% 100%, 0 100%, 0 16px);
+  }
+  .clip-cut-all {
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #c0a060 0%, #d4b878 50%, #e8c870 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

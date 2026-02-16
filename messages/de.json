@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "about": "Über uns",
+    "services": "Leistungen",
+    "portfolio": "Referenzen",
+    "contact": "Kontakt",
+    "cta": "Angebot anfragen"
+  },
+  "meta": {
+    "title": "Szélig Tech – Präzises CNC-Drehen & Fräsen | Ungarn",
+    "description": "Professionelle CNC-Dreh- und Fräsarbeiten in Ungarn. Einzel- und Serienfertigung, Eilaufträge möglich. Zuverlässiger Partner in der Industriefertigung.",
+    "keywords": "CNC-Drehen, CNC-Fräsen, Ungarn, Teilefertigung, Metallarbeiten, Schweißen, Maschinenelemente"
+  },
+  "hero": {
+    "eyebrow": "CNC-Drehen & Fräsen",
+    "title1": "Präzision.",
+    "title2": "Pünktlich.",
+    "title3": "Zuverlässig.",
+    "subtitle": "Individuelle und serielle CNC-Fertigung nach höchsten Qualitätsstandards. Auch Eilaufträge — flexibel und schnell.",
+    "cta_primary": "Angebot anfragen",
+    "cta_secondary": "Referenzen"
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Ein Team,",
+    "titleHighlight": "auf das Sie zählen können.",
+    "p1": "Bei uns stehen langfristige, verlässliche Partnerschaften im Mittelpunkt. Wir reagieren flexibel auf die Bedürfnisse unserer Partner, sei es bei eiligen Aufträgen oder besonderen, individuellen Projekten.",
+    "p2": "Unsere Arbeit wird stets präzise und termingerecht ausgeführt, sodass auch unsere zukünftigen Partner sicher sein können, dass sie mit einem kompetenten und flexiblen Team zusammenarbeiten.",
+    "p3": "Unsere Erfahrung in CNC-Dreh- und Fräsarbeiten gewährleistet, dass jedes Projekt nach den höchsten Qualitätsstandards umgesetzt wird.",
+    "mini": "Unsere zukünftigen Partner können sich darauf verlassen, dass sie mit einem kompetenten und flexiblen Team zusammenarbeiten, wenn schnelle und präzise Lösungen benötigt werden.",
+    "badge": "Qualität garantiert",
+    "highlights": [
+      "Flexible, schnelle Reaktion",
+      "Präzise, termingerechte Lieferung",
+      "Eilaufträge möglich",
+      "Einzel- und Serienfertigung",
+      "CNC-Drehen & Fräsen",
+      "Zuverlässige Langzeitpartnerschaft"
+    ]
+  },
+  "services": {
+    "eyebrow": "Leistungen",
+    "title": "Was wir",
+    "titleHighlight": "anbieten",
+    "description": "Komplette CNC-Lösungen von der Fertigung bis zur Montage.",
+    "items": {
+      "cnc_forgacsolas": {
+        "title": "CNC-Zerspanung",
+        "description": "Präzise CNC-Dreh- und Fräsarbeiten für kleine, mittlere sowie größere Serien, auch in Stückzahlen von mehreren Tausend, sowie für Einzelteile.",
+        "features": [
+          "Klein-, Mittel-, Großserien",
+          "Bis zu mehreren Tausend Stück",
+          "Einzelteile"
+        ]
+      },
+      "femipar": {
+        "title": "Metallmontage- und Schweißarbeiten",
+        "description": "Ergänzende Metallarbeiten als Teil des Fertigungs- und Montageprozesses.",
+        "features": [
+          "Montagearbeiten",
+          "Schweißen",
+          "Kompletter Fertigungsprozess"
+        ]
+      },
+      "gepelemek": {
+        "title": "Maschinenelemente und funktionale Baugruppen",
+        "description": "Fertigung und Montage kompletter Maschinenelemente und funktionaler Baugruppen aus von uns hergestellten Bauteilen.",
+        "features": [
+          "Komplette Maschinenelemente",
+          "Funktionale Baugruppen",
+          "Aus eigenen Bauteilen"
+        ]
+      },
+      "komplex": {
+        "title": "Komplettlösungen aus einer Hand",
+        "description": "Zuverlässige und flexible Umsetzung von der Fertigung bis zur Montage.",
+        "features": [
+          "Komplettservice",
+          "Flexible Umsetzung",
+          "Von Fertigung bis Montage"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Referenzen",
+    "title": "Unsere",
+    "titleHighlight": "Bauteile",
+    "description": "Einige Beispiele unserer präzisen CNC-Bearbeitungsprojekte.",
+    "items": [
+      "Wellenbaugruppe",
+      "Zylindrisches Gehäuse",
+      "Gewindespindel",
+      "Flanschplatte",
+      "Ringelemente",
+      "Klingenkomponenten",
+      "Verschiedene Bauteile"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Angebot",
+    "titleHighlight": "anfragen!",
+    "description": "Füllen Sie das Formular aus oder kontaktieren Sie uns direkt. Wir antworten schnell.",
+    "subtitle": "Schreiben Sie uns!",
+    "subtext": "An Werktagen antworten wir in der Regel innerhalb von 24 Stunden. In dringenden Fällen rufen Sie uns bitte an.",
+    "quote": "Hinter einem präzisen Bauteil steht immer ein präzises Team.",
+    "details": {
+      "email": "szeligfem@gmail.com",
+      "phone": "+36 20 427 6211",
+      "address": "Nagykanizsa, Csengery út 111., Ungarn"
+    },
+    "form": {
+      "name": "Name",
+      "company": "Firmenname",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "message": "Nachricht / Auftragsbeschreibung",
+      "name_placeholder": "Max Mustermann",
+      "company_placeholder": "Musterfirma GmbH",
+      "email_placeholder": "beispiel@email.de",
+      "phone_placeholder": "+36 20 123 4567",
+      "message_placeholder": "Beschreiben Sie kurz Ihren Bedarf...",
+      "submit": "Absenden",
+      "success_title": "Vielen Dank!",
+      "success_text": "Ihre Nachricht wurde empfangen. Wir werden uns bald bei Ihnen melden.",
+      "errors": {
+        "name_required": "Name ist erforderlich",
+        "name_min": "Mindestens 2 Zeichen erforderlich",
+        "email_required": "E-Mail-Adresse ist erforderlich",
+        "email_invalid": "Ungültige E-Mail-Adresse",
+        "message_required": "Nachricht ist erforderlich",
+        "message_min": "Mindestens 10 Zeichen erforderlich",
+        "send_error": "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut!"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Präzises CNC-Drehen und Fräsen. Zuverlässiger Partner in der industriellen Fertigung.",
+    "sitemap": "Seitenverzeichnis",
+    "contact": "Kontakt",
+    "company_name": "Szélig Zoltán Einzelunternehmen",
+    "tax_number": "EU-Steuernummer: HU69454127",
+    "reg_number": "Registrierungsnummer: 53206042",
+    "email": "szeligfem@gmail.com",
+    "phone": "+36 20 427 6211",
+    "address": "Nagykanizsa, Csengery út 111., Ungarn",
+    "rights": "Alle Rechte vorbehalten.",
+    "motto": "Präzision · Zuverlässigkeit · Flexibilität"
+  },
+  "stats": {
+    "experience": "Jahre Erfahrung",
+    "parts": "Gefertigte Bauteile",
+    "deadline": "Termintreue"
+  }
+}

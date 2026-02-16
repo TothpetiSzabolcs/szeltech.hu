@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "about": "About Us",
+    "services": "Services",
+    "portfolio": "Our Work",
+    "contact": "Contact",
+    "cta": "Request a Quote"
+  },
+  "meta": {
+    "title": "Szélig Tech – Precision CNC Turning & Milling | Hungary",
+    "description": "Professional CNC turning and milling services in Hungary. Custom and series production, rush orders welcome. Reliable partner in industrial manufacturing.",
+    "keywords": "CNC turning, CNC milling, Hungary, part manufacturing, metalworking, welding, machine elements"
+  },
+  "hero": {
+    "eyebrow": "CNC Turning & Milling",
+    "title1": "Precision.",
+    "title2": "On Time.",
+    "title3": "Reliable.",
+    "subtitle": "Custom and serial CNC part manufacturing to the highest quality standards. Rush orders welcome — flexible and fast.",
+    "cta_primary": "Request a Quote",
+    "cta_secondary": "Our Work"
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "A team",
+    "titleHighlight": "you can count on.",
+    "p1": "Our focus is on long-term, reliable partnerships. We respond flexibly to our partners' needs, whether it's urgent work or special, custom orders.",
+    "p2": "Our work is always precise and delivered on time, ensuring that future partners can rely on a skilled and flexible team when fast and dependable solutions are required.",
+    "p3": "Our experience in CNC turning and milling guarantees that every project is carried out to the highest quality standards.",
+    "mini": "Our future partners can be confident that they are working with a skilled and flexible team when fast and precise solutions are required.",
+    "badge": "Quality guaranteed",
+    "highlights": [
+      "Flexible, rapid response",
+      "Precise, on-time delivery",
+      "Handling urgent orders",
+      "Custom and series production",
+      "CNC turning & milling",
+      "Reliable long-term partnership"
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "What we",
+    "titleHighlight": "offer",
+    "description": "Complete CNC solutions from manufacturing to assembly.",
+    "items": {
+      "cnc_forgacsolas": {
+        "title": "CNC Machining",
+        "description": "Precise CNC turning and milling for small, medium, and larger production series, including quantities of several thousand units, as well as custom components.",
+        "features": [
+          "Small, medium, large series",
+          "Up to several thousand units",
+          "Custom components"
+        ]
+      },
+      "femipar": {
+        "title": "Metal Assembly and Welding Services",
+        "description": "Supporting metalworking operations as part of the manufacturing and assembly process.",
+        "features": [
+          "Assembly work",
+          "Welding",
+          "Complete manufacturing process"
+        ]
+      },
+      "gepelemek": {
+        "title": "Machine Elements and Functional Subassemblies",
+        "description": "Manufacturing and assembly of complete machine elements and functional subassemblies using parts produced in-house.",
+        "features": [
+          "Complete machine elements",
+          "Functional subassemblies",
+          "From our own parts"
+        ]
+      },
+      "komplex": {
+        "title": "Complete Solutions from a Single Source",
+        "description": "Reliable and flexible execution from manufacturing through to assembly.",
+        "features": [
+          "Full service",
+          "Flexible execution",
+          "From production to assembly"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Our Work",
+    "title": "Completed",
+    "titleHighlight": "parts",
+    "description": "A few examples of our precision CNC machining projects.",
+    "items": [
+      "Shaft assembly",
+      "Cylindrical housing",
+      "Screw spindle",
+      "Flange plate",
+      "Ring elements",
+      "Blade components",
+      "Various components"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Request",
+    "titleHighlight": "a quote!",
+    "description": "Fill out the form below or contact us directly. We'll get back to you quickly.",
+    "subtitle": "Get in touch!",
+    "subtext": "We typically respond within 24 hours on business days. For urgent matters, please call us.",
+    "quote": "Behind every precise part is always a precise team.",
+    "details": {
+      "email": "szeligfem@gmail.com",
+      "phone": "+36 20 427 6211",
+      "address": "Nagykanizsa, Csengery út 111., Hungary"
+    },
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message / Order Description",
+      "name_placeholder": "John Smith",
+      "company_placeholder": "Company Ltd.",
+      "email_placeholder": "example@email.com",
+      "phone_placeholder": "+36 20 123 4567",
+      "message_placeholder": "Briefly describe what you need...",
+      "submit": "Send",
+      "success_title": "Thank you!",
+      "success_text": "Your message has been received. We will get in touch with you soon.",
+      "errors": {
+        "name_required": "Name is required",
+        "name_min": "At least 2 characters required",
+        "email_required": "Email address is required",
+        "email_invalid": "Invalid email address",
+        "message_required": "Message is required",
+        "message_min": "At least 10 characters required",
+        "send_error": "An error occurred while sending the message. Please try again!"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Precision CNC turning and milling. A reliable partner in industrial part manufacturing.",
+    "sitemap": "Sitemap",
+    "contact": "Contact",
+    "company_name": "Szélig Zoltán Sole Proprietorship",
+    "tax_number": "EU Tax Number: HU69454127",
+    "reg_number": "Registration Number: 53206042",
+    "email": "szeligfem@gmail.com",
+    "phone": "+36 20 427 6211",
+    "address": "Nagykanizsa, Csengery út 111., Hungary",
+    "rights": "All rights reserved.",
+    "motto": "Precision · Reliability · Flexibility"
+  },
+  "stats": {
+    "experience": "Years of experience",
+    "parts": "Parts manufactured",
+    "deadline": "On-time delivery"
+  }
+}

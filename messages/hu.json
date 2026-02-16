@@ -1,0 +1,156 @@
+{
+  "nav": {
+    "about": "Rólunk",
+    "services": "Szolgáltatások",
+    "portfolio": "Munkáink",
+    "contact": "Kapcsolat",
+    "cta": "Ajánlatkérés"
+  },
+  "meta": {
+    "title": "Szélig Tech – Precíziós CNC Esztergálás & Marás | Nagykanizsa",
+    "description": "Professzionális CNC esztergálás és marás Nagykanizsán. Egyedi és sorozatgyártás, sürgős megrendelések. Megbízható partner az ipari alkatrészgyártásban.",
+    "keywords": "CNC esztergálás, CNC marás, Nagykanizsa, alkatrészgyártás, fémipari munkák, hegesztés, gépelemek"
+  },
+  "hero": {
+    "eyebrow": "CNC Esztergálás & Marás",
+    "title1": "Precízió.",
+    "title2": "Határidőre.",
+    "title3": "Megbízhatóan.",
+    "subtitle": "Egyedi és sorozatos CNC alkatrészgyártás a legmagasabb minőségi elvárások szerint. Sürgős munkák is — rugalmasan, gyorsan.",
+    "cta_primary": "Ajánlatkérés",
+    "cta_secondary": "Munkáink"
+  },
+  "about": {
+    "eyebrow": "Rólunk",
+    "title": "Egy csapat,",
+    "titleHighlight": "akire számíthatsz.",
+    "p1": "Nálunk a hosszú távú, megbízható együttműködések állnak a középpontban. Partnereink igényeire rugalmasan reagálunk, legyen szó sürgős munkáról vagy különleges, egyedi megrendelésről.",
+    "p2": "Munkánk mindig precíz és határidőre elkészült, így a jövőbeli partnereink is biztosak lehetnek abban, hogy egy szakértelemre és rugalmasságra építő, bevethető csapattal dolgoznak együtt.",
+    "p3": "CNC esztergálásban és marásban szerzett tapasztalatunk biztosítja, hogy minden projekt a legmagasabb minőségi elvárások szerint valósuljon meg.",
+    "mini": "A jövőbeli partnereink is biztosak lehetnek abban, hogy szakértelemre és rugalmasságra építő, megbízható csapattal dolgoznak együtt, amikor gyors és pontos megoldásra van szükség.",
+    "badge": "Minőség garantált",
+    "highlights": [
+      "Rugalmas, gyors reagálás",
+      "Precíz, határidőre elkészített munkák",
+      "Sürgős megrendelések kezelése",
+      "Egyedi és sorozatgyártás",
+      "CNC esztergálás & marás",
+      "Megbízható hosszú távú partnerség"
+    ]
+  },
+  "services": {
+    "eyebrow": "Szolgáltatások",
+    "title": "Amit",
+    "titleHighlight": "kínálunk",
+    "description": "Komplex CNC megoldások a gyártástól az összeállításig.",
+    "items": {
+      "cnc_forgacsolas": {
+        "title": "CNC forgácsolás",
+        "description": "Precíz CNC esztergálási és marási megoldások kis-, közepes, valamint nagyobb szériákhoz is, akár több ezres darabszámban, továbbá egyedi alkatrészek gyártására.",
+        "features": [
+          "Kis-, közepes, nagyobb sorozatok",
+          "Akár több ezer darabszám",
+          "Egyedi alkatrészek"
+        ]
+      },
+      "femipar": {
+        "title": "Fémipari szerelési és hegesztési munkák",
+        "description": "Kiegészítő fémipari munkák a gyártási és összeállítási folyamat részeként.",
+        "features": [
+          "Szerelési munkák",
+          "Hegesztés",
+          "Komplett gyártási folyamat"
+        ]
+      },
+      "gepelemek": {
+        "title": "Gépelemek és funkcionális részegységek",
+        "description": "Az általunk gyártott alkatrészekből komplett gépelemek és funkcionális részegységek gyártása és összeállítása.",
+        "features": [
+          "Komplett gépelemek",
+          "Funkcionális részegységek",
+          "Saját alkatrészekből"
+        ]
+      },
+      "komplex": {
+        "title": "Komplex megoldások egy kézből",
+        "description": "Megbízható, rugalmas kivitelezés a gyártástól az összeállításig.",
+        "features": [
+          "Teljes körű szolgáltatás",
+          "Rugalmas kivitelezés",
+          "Gyártástól összeállításig"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "eyebrow": "Munkáink",
+    "title": "Elkészült",
+    "titleHighlight": "alkatrészeink",
+    "description": "Néhány példa a nálunk megvalósult precíziós CNC megmunkálási projektekből.",
+    "items": [
+      "Tengelyszerelvény",
+      "Hengeres ház",
+      "Csavarorsó",
+      "Karimás lemez",
+      "Gyűrű elemek",
+      "Penge alkatrészek",
+      "Vegyes alkatrészek"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Kapcsolat",
+    "title": "Kérjen",
+    "titleHighlight": "árajánlatot!",
+    "description": "Töltse ki az alábbi űrlapot, vagy keressen minket közvetlenül. Gyorsan visszajelzünk.",
+    "subtitle": "Írjon nekünk!",
+    "subtext": "Munkanapokon jellemzően 24 órán belül visszajelzünk. Sürgős esetben hívjon telefonon.",
+    "quote": "Egy precíz alkatrész mögött mindig egy precíz csapat áll.",
+    "details": {
+      "email": "szeligfem@gmail.com",
+      "phone": "+36 20 427 6211",
+      "address": "Nagykanizsa, Csengery út 111."
+    },
+    "form": {
+      "name": "Név",
+      "company": "Cégnév",
+      "email": "Email",
+      "phone": "Telefon",
+      "message": "Üzenet / Megrendelés leírása",
+      "name_placeholder": "Kovács János",
+      "company_placeholder": "Cég Kft.",
+      "email_placeholder": "pelda@email.hu",
+      "phone_placeholder": "+36 20 123 4567",
+      "message_placeholder": "Írja le röviden, mire lenne szüksége...",
+      "submit": "Küldés",
+      "success_title": "Köszönjük!",
+      "success_text": "Üzenetét megkaptuk. Hamarosan felvesszük Önnel a kapcsolatot.",
+      "errors": {
+        "name_required": "Név megadása kötelező",
+        "name_min": "Legalább 2 karakter szükséges",
+        "email_required": "Email cím megadása kötelező",
+        "email_invalid": "Érvénytelen email cím",
+        "message_required": "Üzenet megadása kötelező",
+        "message_min": "Legalább 10 karakter szükséges",
+        "send_error": "Hiba történt az üzenet küldése során. Kérjük próbálja újra!"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Precíziós CNC esztergálás és marás. Megbízható partner az ipari alkatrészgyártásban.",
+    "sitemap": "Oldaltérkép",
+    "contact": "Elérhetőség",
+    "company_name": "Szélig Zoltán Egyéni Vállalkozó",
+    "tax_number": "Közösségi adószám: HU69454127",
+    "reg_number": "Ev nyilvántartási szám: 53206042",
+    "email": "szeligfem@gmail.com",
+    "phone": "+36 20 427 6211",
+    "address": "Nagykanizsa, Csengery út 111.",
+    "rights": "Minden jog fenntartva.",
+    "motto": "Precízió · Megbízhatóság · Rugalmasság"
+  },
+  "stats": {
+    "experience": "Év tapasztalat",
+    "parts": "Elkészített alkatrész",
+    "deadline": "Határidő tartás"
+  }
+}
