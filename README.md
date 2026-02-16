@@ -1,0 +1,1 @@
+# szeltech.hu
