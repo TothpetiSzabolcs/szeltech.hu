@@ -22,6 +22,7 @@ export function About() {
                   alt="Szélig Tech munka"
                   fill
                   className="object-cover"
+                  priority
                 />
               </div>
               <div className="absolute -bottom-10 -right-6 lg:-right-12 w-[52%] aspect-square overflow-hidden clip-cut-tl border-4 border-bg">

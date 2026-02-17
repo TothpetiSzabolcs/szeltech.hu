@@ -1,7 +1,9 @@
 {
   "nav": {
+    "home": "Főoldal",
     "about": "Rólunk",
     "services": "Szolgáltatások",
+    "machines": "Gépparkunk",
     "portfolio": "Munkáink",
     "contact": "Kapcsolat",
     "cta": "Ajánlatkérés"
@@ -19,6 +21,49 @@
     "subtitle": "Egyedi és sorozatgyártás a legmagasabb minőségi elvárások szerint. Sürgős munkák is — rugalmasan, gyorsan.",
     "cta_primary": "Ajánlatkérés",
     "cta_secondary": "Munkáink"
+  },
+  "machines": {
+    "eyebrow": "Technológia",
+    "title": "Gépparkunk és",
+    "titleHighlight": "megmunkálási lehetőségeink",
+    "description": "Cégünk a forgácsolás területén széles körű tapasztalattal rendelkezik, gépparkunk pedig lehetővé teszi a kis- és nagyobb sorozatú alkatrészek precíz, gazdaságos gyártását.",
+    "items": {
+      "cnc_lathe_small": {
+        "title": "CNC esztergagép",
+        "specs": [
+          "Ø3–160 mm",
+          "Hossz: 650 mm",
+          "Főorsó áteresztés: 42 mm",
+          "Kisebb alkatrészek és nagy sorozatok gazdaságos gyártása"
+        ]
+      },
+      "cnc_lathe_large": {
+        "title": "CNC esztergagép",
+        "specs": [
+          "Ø42–400 mm",
+          "Hossz: 500 mm",
+          "Főorsó áteresztés: 102 mm",
+          "Nagyobb alkatrészek és egyedi termékek"
+        ]
+      },
+      "cnc_milling": {
+        "title": "CNC marógép",
+        "specs": [
+          "Megmunkálási tartomány: 320 x 260 mm",
+          "Asztalméret: 400 x 500 mm",
+          "Finom marási műveletek"
+        ]
+      },
+      "conventional_lathe": {
+        "title": "Hagyományos nagy méretű esztergagépek",
+        "specs": [
+          "akár Ø680 mm",
+          "Csúcstáv: 2000 mm",
+          "Legnagyobb elforduló átmérő: 800 mm",
+          "Nagyobb, robusztus alkatrészek gyártása"
+        ]
+      }
+    }
   },
   "about": {
     "eyebrow": "Rólunk",

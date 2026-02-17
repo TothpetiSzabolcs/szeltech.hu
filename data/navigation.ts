@@ -1,6 +1,8 @@
 export const navLinks = [
-  { labelKey: "about",    href: "#rolunk" },
-  { labelKey: "services", href: "#szolgaltatasok" },
-  { labelKey: "portfolio", href: "#munkak" },
-  { labelKey: "contact",  href: "#kapcsolat" },
+  { href: "#fooldal", labelKey: "home" },
+  { href: "#rolunk", labelKey: "about" },
+  { href: "#szolgaltatasok", labelKey: "services" },
+  { href: "#geppark", labelKey: "machines" },
+  { href: "#munkak", labelKey: "portfolio" },
+  { href: "#kapcsolat", labelKey: "contact" },
 ];

@@ -1,10 +1,12 @@
 {
   "nav": {
-    "about": "About Us",
+    "home": "Home",
+    "about": "About",
     "services": "Services",
-    "portfolio": "Our Work",
+    "machines": "Machine Park",
+    "portfolio": "Portfolio",
     "contact": "Contact",
-    "cta": "Request a Quote"
+    "cta": "Get Quote"
   },
   "meta": {
     "title": "SzelTech – Precision CNC Turning & Milling | Hungary",
@@ -20,6 +22,49 @@
     "cta_primary": "Request a Quote",
     "cta_secondary": "Our Work"
   },
+  "machines": {
+  "eyebrow": "Technology",
+  "title": "Our Machine Park and",
+  "titleHighlight": "Capabilities",
+  "description": "Our company has extensive experience in machining, and our machine park enables the precise and cost-effective production of small and large series components.",
+  "items": {
+    "cnc_lathe_small": {
+      "title": "CNC Lathe",
+      "specs": [
+        "Ø3–160 mm",
+        "Length: 650 mm",
+        "Spindle bore: 42 mm",
+        "Economical production of smaller parts and large series"
+      ]
+    },
+    "cnc_lathe_large": {
+      "title": "CNC Lathe",
+      "specs": [
+        "Ø42–400 mm",
+        "Length: 500 mm",
+        "Spindle bore: 102 mm",
+        "Larger components and custom products"
+      ]
+    },
+    "cnc_milling": {
+      "title": "CNC Milling Machine",
+      "specs": [
+        "Machining range: 320 x 260 mm",
+        "Table size: 400 x 500 mm",
+        "Fine milling operations"
+      ]
+    },
+    "conventional_lathe": {
+      "title": "Conventional Large Lathes",
+      "specs": [
+        "up to Ø680 mm",
+        "Center distance: 2000 mm",
+        "Maximum turning diameter: 800 mm",
+        "Production of larger, robust components"
+      ]
+    }
+  }
+},
   "about": {
     "eyebrow": "About Us",
     "title": "A team",

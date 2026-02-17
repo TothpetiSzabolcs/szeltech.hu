@@ -1,10 +1,12 @@
 {
   "nav": {
+    "home": "Startseite",
     "about": "Über uns",
-    "services": "Leistungen",
-    "portfolio": "Referenzen",
+    "services": "Dienstleistungen",
+    "machines": "Maschinenpark",
+    "portfolio": "Arbeiten",
     "contact": "Kontakt",
-    "cta": "Angebot anfragen"
+    "cta": "Angebot anfordern"
   },
   "meta": {
     "title": "SzelTech – Präzises CNC-Drehen & Fräsen | Ungarn",
@@ -19,6 +21,49 @@
     "subtitle": "Individuelle und serielle CNC-Fertigung nach höchsten Qualitätsstandards. Auch Eilaufträge — flexibel und schnell.",
     "cta_primary": "Angebot anfragen",
     "cta_secondary": "Referenzen"
+  },
+  "machines": {
+    "eyebrow": "Technologie",
+    "title": "Unser Maschinenpark und",
+    "titleHighlight": "Bearbeitungsmöglichkeiten",
+    "description": "Unser Unternehmen verfügt über umfassende Erfahrung im Bereich Zerspanung, und unser Maschinenpark ermöglicht die präzise und wirtschaftliche Fertigung von Klein- und Großserien.",
+    "items": {
+      "cnc_lathe_small": {
+        "title": "CNC-Drehmaschine",
+        "specs": [
+          "Ø3–160 mm",
+          "Länge: 650 mm",
+          "Spindeldurchlass: 42 mm",
+          "Wirtschaftliche Fertigung kleinerer Teile und großer Serien"
+        ]
+      },
+      "cnc_lathe_large": {
+        "title": "CNC-Drehmaschine",
+        "specs": [
+          "Ø42–400 mm",
+          "Länge: 500 mm",
+          "Spindeldurchlass: 102 mm",
+          "Größere Bauteile und kundenspezifische Produkte"
+        ]
+      },
+      "cnc_milling": {
+        "title": "CNC-Fräsmaschine",
+        "specs": [
+          "Bearbeitungsbereich: 320 x 260 mm",
+          "Tischgröße: 400 x 500 mm",
+          "Feine Fräsoperationen"
+        ]
+      },
+      "conventional_lathe": {
+        "title": "Traditionelle Großdrehmaschinen",
+        "specs": [
+          "bis zu Ø680 mm",
+          "Spitzenweite: 2000 mm",
+          "Größter Drehdurchmesser: 800 mm",
+          "Fertigung größerer, robuster Bauteile"
+        ]
+      }
+    }
   },
   "about": {
     "eyebrow": "Über uns",
