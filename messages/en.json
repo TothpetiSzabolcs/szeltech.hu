@@ -201,47 +201,40 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Request",
-    "titleHighlight": "a quote!",
-    "description": "Fill out the form below or contact us directly. We'll get back to you quickly.",
-    "subtitle": "Get in touch!",
-    "subtext": "We typically respond within 24 hours on business days. For urgent matters, please call us.",
-    "quote": "Behind every precise part is always a precise team.",
+    "title": "Get in",
+    "titleHighlight": "touch with us",
+    "description": "Have a question or custom request? Send us a message and our team will get back to you shortly!",
     "details": {
       "email_label": "Email",
-      "phone_label": "Phone",
-      "address_label": "Address",
       "email": "szeligfem@gmail.com",
+      "phone_label": "Phone",
       "phone": "+36 20 427 6211",
-      "address": "Nagykanizsa, Csengery út 111., Hungary"
+      "address_label": "Address",
+      "address": "Budapest, Hungary"
     },
+    "quote": "Precision machining, on-time delivery — we guarantee this in every project.",
     "form": {
+      "name": "Name",
+      "company": "Company Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "sending": "Sending...",
+      "submit": "Send Message",
       "privacy_prefix": "I accept the",
       "privacy_link": "Privacy Policy",
       "privacy_suffix": ".",
-      "name": "Name",
-      "company": "Company",
-      "email": "Email",
-      "phone": "Phone",
-      "message": "Message / Order Description",
-      "name_placeholder": "John Smith",
-      "company_placeholder": "Company Ltd.",
-      "email_placeholder": "example@email.com",
-      "phone_placeholder": "+36 20 123 4567",
-      "message_placeholder": "Briefly describe what you need...",
-      "submit": "Send",
-      "success_title": "Thank you!",
-      "success_text": "Your message has been received. We will get in touch with you soon.",
       "errors": {
+        "name": "Please enter a valid name (minimum 2 characters)",
+        "email": "Please enter a valid email address",
+        "message": "Message must be at least 10 characters long",
         "privacy": "Accepting the privacy policy is required",
-        "name_required": "Name is required",
-        "name_min": "At least 2 characters required",
-        "email_required": "Email address is required",
-        "email_invalid": "Invalid email address",
-        "message_required": "Message is required",
-        "message_min": "At least 10 characters required",
-        "send_error": "An error occurred while sending the message. Please try again!"
+        "general": "An error occurred while sending the message. Please try again later."
       }
+    },
+    "success": {
+      "title": "Message Sent!",
+      "message": "Thank you for reaching out! We will get back to you shortly."
     }
   },
   "footer": {

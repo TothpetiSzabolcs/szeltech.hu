@@ -201,47 +201,40 @@
   },
   "contact": {
     "eyebrow": "Kontakt",
-    "title": "Angebot",
-    "titleHighlight": "anfragen!",
-    "description": "Füllen Sie das Formular aus oder kontaktieren Sie uns direkt. Wir antworten schnell.",
-    "subtitle": "Schreiben Sie uns!",
-    "subtext": "An Werktagen antworten wir in der Regel innerhalb von 24 Stunden. In dringenden Fällen rufen Sie uns bitte an.",
-    "quote": "Hinter einem präzisen Bauteil steht immer ein präzises Team.",
+    "title": "Nehmen Sie",
+    "titleHighlight": "Kontakt auf",
+    "description": "Haben Sie eine Frage oder eine individuelle Anfrage? Senden Sie uns eine Nachricht und unser Team wird sich in Kürze bei Ihnen melden!",
     "details": {
       "email_label": "E-Mail",
-      "phone_label": "Telefon",
-      "address_label": "Adresse",
       "email": "szeligfem@gmail.com",
+      "phone_label": "Telefon",
       "phone": "+36 20 427 6211",
-      "address": "Nagykanizsa, Csengery út 111., Ungarn"
+      "address_label": "Adresse",
+      "address": "Budapest, Ungarn"
     },
+    "quote": "Präzisionsbearbeitung, pünktliche Lieferung — das garantieren wir bei jedem Projekt.",
     "form": {
       "name": "Name",
       "company": "Firmenname",
-      "email": "E-Mail",
-      "phone": "Telefon",
-      "message": "Nachricht / Auftragsbeschreibung",
-      "name_placeholder": "Max Mustermann",
-      "company_placeholder": "Musterfirma GmbH",
-      "email_placeholder": "beispiel@email.de",
-      "phone_placeholder": "+36 20 123 4567",
-      "message_placeholder": "Beschreiben Sie kurz Ihren Bedarf...",
-      "submit": "Absenden",
-      "success_title": "Vielen Dank!",
-      "success_text": "Ihre Nachricht wurde empfangen. Wir werden uns bald bei Ihnen melden.",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "message": "Nachricht",
+      "sending": "Wird gesendet...",
+      "submit": "Nachricht senden",
       "privacy_prefix": "Ich akzeptiere die",
       "privacy_link": "Datenschutzerklärung",
       "privacy_suffix": ".",
       "errors": {
+        "name": "Bitte geben Sie einen gültigen Namen ein (mindestens 2 Zeichen)",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "message": "Die Nachricht muss mindestens 10 Zeichen lang sein",
         "privacy": "Die Annahme der Datenschutzerklärung ist erforderlich",
-        "name_required": "Name ist erforderlich",
-        "name_min": "Mindestens 2 Zeichen erforderlich",
-        "email_required": "E-Mail-Adresse ist erforderlich",
-        "email_invalid": "Ungültige E-Mail-Adresse",
-        "message_required": "Nachricht ist erforderlich",
-        "message_min": "Mindestens 10 Zeichen erforderlich",
-        "send_error": "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut!"
+        "general": "Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
       }
+    },
+    "success": {
+      "title": "Nachricht gesendet!",
+      "message": "Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden."
     }
   },
   "footer": {

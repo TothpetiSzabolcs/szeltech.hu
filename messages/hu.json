@@ -201,47 +201,40 @@
   },
   "contact": {
     "eyebrow": "Kapcsolat",
-    "title": "Kérjen",
-    "titleHighlight": "árajánlatot!",
-    "description": "Töltse ki az alábbi űrlapot, vagy keressen minket közvetlenül. Gyorsan visszajelzünk.",
-    "subtitle": "Írjon nekünk!",
-    "subtext": "Munkanapokon jellemzően 24 órán belül visszajelzünk. Sürgős esetben hívjon telefonon.",
-    "quote": "Egy precíz alkatrész mögött mindig egy precíz csapat áll.",
+    "title": "Lépjen",
+    "titleHighlight": "kapcsolatba velünk",
+    "description": "Van kérdése vagy egyedi igénye? Küldje el üzenetét és munkatársunk hamarosan felveszi Önnel a kapcsolatot!",
     "details": {
       "email_label": "E-mail",
-      "phone_label": "Telefon",
-      "address_label": "Cím",
       "email": "szeligfem@gmail.com",
+      "phone_label": "Telefon",
       "phone": "+36 20 427 6211",
-      "address": "Nagykanizsa, Csengery út 111."
+      "address_label": "Cím",
+      "address": "Budapest, Magyarország"
     },
+    "quote": "Precíziós megmunkálás, határidős szállítás — ezt garantáljuk minden projektben.",
     "form": {
-          "privacy_prefix": "Elfogadom az",
-          "privacy_link": "Adatkezelési Tájékoztatót",
-          "privacy_suffix": ".",
       "name": "Név",
       "company": "Cégnév",
-      "email": "Email",
-      "phone": "Telefon",
-      "message": "Üzenet / Megrendelés leírása",
-      "name_placeholder": "Kovács János",
-      "company_placeholder": "Cég Kft.",
-      "email_placeholder": "pelda@email.hu",
-      "phone_placeholder": "+36 20 123 4567",
-      "message_placeholder": "Írja le röviden, mire lenne szüksége...",
-      "submit": "Küldés",
-      "success_title": "Köszönjük!",
-      "success_text": "Üzenetét megkaptuk. Hamarosan felvesszük Önnel a kapcsolatot.",
+      "email": "E-mail cím",
+      "phone": "Telefonszám",
+      "message": "Üzenet",
+      "sending": "Küldés...",
+      "submit": "Üzenet küldése",
+      "privacy_prefix": "Elfogadom az",
+      "privacy_link": "Adatkezelési Tájékoztatót",
+      "privacy_suffix": ".",
       "errors": {
+        "name": "Kérjük, adjon meg egy érvényes nevet (minimum 2 karakter)",
+        "email": "Kérjük, adjon meg egy érvényes e-mail címet",
+        "message": "Az üzenet minimum 10 karakter hosszú legyen",
         "privacy": "Az adatkezelési tájékoztató elfogadása kötelező",
-        "name_required": "Név megadása kötelező",
-        "name_min": "Legalább 2 karakter szükséges",
-        "email_required": "Email cím megadása kötelező",
-        "email_invalid": "Érvénytelen email cím",
-        "message_required": "Üzenet megadása kötelező",
-        "message_min": "Legalább 10 karakter szükséges",
-        "send_error": "Hiba történt az üzenet küldése során. Kérjük próbálja újra!"
+        "general": "Hiba történt az üzenet küldése során. Kérjük, próbálja újra később."
       }
+    },
+    "success": {
+      "title": "Üzenet elküldve!",
+      "message": "Köszönjük megkeresését! Hamarosan felvesszük Önnel a kapcsolatot."
     }
   },
   "footer": {
