@@ -13,6 +13,63 @@
     "description": "Professional CNC turning and milling services in Hungary. Custom and series production, rush orders welcome. Reliable partner in industrial manufacturing.",
     "keywords": "CNC turning, CNC milling, Hungary, part manufacturing, metalworking, welding, machine elements"
   },
+  "privacy": {
+    "meta_title": "Privacy Policy - SzelTech",
+    "meta_description": "Privacy policy and data protection information for the SzelTech website.",
+    "title": "Privacy Policy",
+    "last_updated": "Last updated",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "Szélig Zoltán Sole Proprietorship (hereinafter: Data Controller) is committed to protecting personal data and complying with GDPR regulations. This policy aims to provide detailed information about how we handle the data you provide."
+      },
+      "controller": {
+        "title": "Data Controller",
+        "tax": "Tax number",
+        "reg": "Registration number",
+        "email": "Email",
+        "phone": "Phone"
+      },
+      "data_collected": {
+        "title": "Data Collected",
+        "content": "Through the contact form, we collect the following data:",
+        "items": [
+          "Name (required)",
+          "Email address (required)",
+          "Company name (optional)",
+          "Phone number (optional)",
+          "Message content (required)"
+        ]
+      },
+      "purpose": {
+        "title": "Purpose of Data Processing",
+        "content": "The data you provide is used solely for responding to your inquiry and preparing quotations. We do not use the data for marketing purposes and do not share it with third parties."
+      },
+      "legal_basis": {
+        "title": "Legal Basis",
+        "content": "The legal basis for data processing is your voluntary consent (GDPR Article 6(1)(a)), which you provide by submitting the contact form."
+      },
+      "storage": {
+        "title": "Data Storage",
+        "content": "The data you provide is stored electronically on secure servers. We retain the data for a maximum of 1 year after processing your inquiry, or delete it upon your request."
+      },
+      "rights": {
+        "title": "Your Rights",
+        "content": "Regarding data processing, you have the following rights:",
+        "items": [
+          "Access: you can request information about the data we process",
+          "Rectification: you can request correction of your data",
+          "Erasure: you can request deletion of your data",
+          "Restriction: you can request restriction of processing",
+          "Objection: you can object to data processing"
+        ]
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "If you have any questions about data processing or wish to exercise any of your rights, please contact us at szeligfem@gmail.com."
+      }
+    }
+  },
   "hero": {
     "eyebrow": "CNC Turning & Milling",
     "title1": "Precision.",
@@ -151,11 +208,17 @@
     "subtext": "We typically respond within 24 hours on business days. For urgent matters, please call us.",
     "quote": "Behind every precise part is always a precise team.",
     "details": {
+      "email_label": "Email",
+      "phone_label": "Phone",
+      "address_label": "Address",
       "email": "szeligfem@gmail.com",
       "phone": "+36 20 427 6211",
       "address": "Nagykanizsa, Csengery út 111., Hungary"
     },
     "form": {
+      "privacy_prefix": "I accept the",
+      "privacy_link": "Privacy Policy",
+      "privacy_suffix": ".",
       "name": "Name",
       "company": "Company",
       "email": "Email",
@@ -170,6 +233,7 @@
       "success_title": "Thank you!",
       "success_text": "Your message has been received. We will get in touch with you soon.",
       "errors": {
+        "privacy": "Accepting the privacy policy is required",
         "name_required": "Name is required",
         "name_min": "At least 2 characters required",
         "email_required": "Email address is required",

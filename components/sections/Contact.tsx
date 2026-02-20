@@ -1,75 +1,69 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
+import { Send } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import Link from "next/link";
 
 export function Contact() {
   const t = useTranslations("contact");
+  const pathname = usePathname();
+  const currentLocale = pathname.split("/")[1] || "hu";
+
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     email: "",
     phone: "",
     message: "",
+    privacyAccepted: false,
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [sent, setSent] = useState(false);
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+    privacyAccepted: "",
+  });
+
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (sent) {
-      const timer = setTimeout(() => {
-        setSent(false);
-      }, 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [sent]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error on change
-    if (errors[name]) {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
-        delete newErrors[name];
-        return newErrors;
-      });
-    }
-  };
+  const [success, setSuccess] = useState(false);
+  const [generalError, setGeneralError] = useState("");
 
   const validateForm = () => {
-    const newErrors: Record<string, string> = {};
+    const newErrors = {
+      name: "",
+      email: "",
+      message: "",
+      privacyAccepted: "",
+    };
 
-    // Name validation
-    if (!formData.name.trim()) {
-      newErrors.name = t("form.errors.name_required");
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = t("form.errors.name_min");
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      newErrors.name = t("form.errors.name");
     }
 
-    // Email validation
-    if (!formData.email.trim()) {
-      newErrors.email = t("form.errors.email_required");
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = t("form.errors.email_invalid");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email)) {
+      newErrors.email = t("form.errors.email");
     }
 
-    // Message validation
-    if (!formData.message.trim()) {
-      newErrors.message = t("form.errors.message_required");
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = t("form.errors.message_min");
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      newErrors.message = t("form.errors.message");
+    }
+
+    if (!formData.privacyAccepted) {
+      newErrors.privacyAccepted = t("form.errors.privacy");
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return !Object.values(newErrors).some((error) => error !== "");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setGeneralError("");
 
     if (!validateForm()) return;
 
@@ -79,197 +73,261 @@ export function Contact() {
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
       });
 
-      if (response.ok) {
-        setSent(true);
-        setFormData({ name: "", company: "", email: "", phone: "", message: "" });
-        setErrors({});
-      } else {
-        setErrors({ general: t("form.errors.send_error") });
-      }
+      if (!response.ok) throw new Error("Failed to send email");
+
+      setSuccess(true);
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          message: "",
+          privacyAccepted: false,
+        });
+        setSuccess(false);
+      }, 3000);
     } catch (error) {
-      setErrors({ general: t("form.errors.send_error") });
+      setGeneralError(t("form.errors.general"));
     } finally {
       setLoading(false);
     }
   };
 
-  const contactDetails = [
-    { icon: Mail, label: "Email", value: t("details.email"), href: `mailto:${t("details.email")}` },
-    { icon: Phone, label: "Phone", value: t("details.phone"), href: `tel:${t("details.phone").replace(/\s/g, "")}` },
-    { icon: MapPin, label: "Address", value: t("details.address"), href: undefined },
-  ];
+  const privacyUrls: Record<string, string> = {
+    hu: "adatkezeles",
+    en: "privacy-policy",
+    de: "datenschutz",
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value, type } = e.target;
+    const checked = (e.target as HTMLInputElement).checked;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+
+    if (errors[name as keyof typeof errors]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
+  };
+
+  if (success) {
+    return (
+      <section id="kapcsolat" className="py-28 lg:py-36 bg-bg-2">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="w-20 h-20 bg-gold/10 border border-gold/20 clip-cut-all flex items-center justify-center mx-auto mb-6">
+              <Send size={32} className="text-gold" />
+            </div>
+            <h2 className="text-3xl font-bold text-steel-chrome mb-4">
+              {t("success.title")}
+            </h2>
+            <p className="text-steel-dark">{t("success.message")}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="kapcsolat" className="py-28 lg:py-36 bg-bg-2">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <SectionHeader
-          eyebrow={t("eyebrow")}
-          title={t("title")}
-          titleHighlight={t("titleHighlight")}
-          description={t("description")}
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <SectionHeader
+              eyebrow={t("eyebrow")}
+              title={t("title")}
+              titleHighlight={t("titleHighlight")}
+              description={t("description")}
+              align="left"
+            />
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
-          
-          {/* Info side */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
-            <div>
-              <h3 className="text-2xl font-bold text-steel-chrome mb-2 tracking-tight">
-                {t("subtitle")}
-              </h3>
-              <p className="text-sm text-white/40 leading-relaxed">
-                {t("subtext")}
-              </p>
+            <div className="mt-12 space-y-6">
+              <div>
+                <p className="text-sm font-semibold tracking-widest uppercase text-gold mb-2">
+                  {t("details.email_label")}
+                </p>
+                <a
+                  href={`mailto:${t("details.email")}`}
+                  className="text-lg text-steel-chrome hover:text-gold transition-colors"
+                >
+                  {t("details.email")}
+                </a>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold tracking-widest uppercase text-gold mb-2">
+                  {t("details.phone_label")}
+                </p>
+                <a
+                  href={`tel:${t("details.phone")}`}
+                  className="text-lg text-steel-chrome hover:text-gold transition-colors"
+                >
+                  {t("details.phone")}
+                </a>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold tracking-widest uppercase text-gold mb-2">
+                  {t("details.address_label")}
+                </p>
+                <p className="text-lg text-steel-dark">
+                  {t("details.address")}
+                </p>
+              </div>
             </div>
 
-            <div className="flex flex-col gap-5">
-              {contactDetails.map(({ icon: Icon, label, value, href }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-gold/8 border border-gold/20 text-gold">
-                    <Icon size={16} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-0.5">
-                      {label}
-                    </p>
-                    {href ? (
-                      <a href={href} className="text-[15px] font-medium text-steel hover:text-gold-light transition-colors">
-                        {value}
-                      </a>
-                    ) : (
-                      <p className="text-[15px] font-medium text-steel">{value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-4 p-6 bg-bg border border-white/5 border-l-2 border-l-gold">
-              <p className="text-sm italic text-white/30 leading-relaxed">
-                {t("quote")}
-              </p>
+            <blockquote className="mt-12 border-l-2 border-gold pl-6 italic text-steel-dark">
+              "{t("quote")}"
               <p className="mt-3 text-[11px] font-bold tracking-widest uppercase text-gold/50">
                 — SzelTech
               </p>
-            </div>
+            </blockquote>
           </div>
 
-          {/* Form */}
-          <div className="lg:col-span-3 relative bg-bg border border-white/5 p-8 lg:p-12">
-            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-gold to-gold-light" />
-
-            {sent ? (
-              <div className="flex flex-col items-center justify-center h-full gap-4 py-16 text-center">
-                <div className="w-14 h-14 flex items-center justify-center bg-gold/10 border border-gold/30 text-gold mb-2">
-                  <Send size={22} />
-                </div>
-                <h3 className="text-2xl font-bold text-steel-chrome">{t("form.success_title")}</h3>
-                <p className="text-sm text-white/40 max-w-xs">{t("form.success_text")}</p>
+          <div className="bg-bg border border-white/5 p-8 lg:p-10">
+            {generalError && (
+              <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                {generalError}
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-                {errors.general && (
-                  <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 text-sm rounded">
-                    {errors.general}
-                  </div>
-                )}
+            )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-2">
-                      {t("form.name")} *
-                    </label>
-                    <input
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder={t("form.name_placeholder")}
-                      className={`w-full bg-white/3 border ${
-                        errors.name ? "border-red-500/50" : "border-white/8"
-                      } text-steel text-sm px-4 py-3.5 outline-none focus:border-gold/50 transition-colors placeholder:text-white/20`}
-                    />
-                    {errors.name && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.name}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-2">
-                      {t("form.company")}
-                    </label>
-                    <input
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder={t("form.company_placeholder")}
-                      className="w-full bg-white/3 border border-white/8 text-steel text-sm px-4 py-3.5 outline-none focus:border-gold/50 transition-colors placeholder:text-white/20"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-2">
-                      {t("form.email")} *
-                    </label>
-                    <input
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder={t("form.email_placeholder")}
-                      className={`w-full bg-white/3 border ${
-                        errors.email ? "border-red-500/50" : "border-white/8"
-                      } text-steel text-sm px-4 py-3.5 outline-none focus:border-gold/50 transition-colors placeholder:text-white/20`}
-                    />
-                    {errors.email && (
-                      <p className="mt-1.5 text-xs text-red-400">{errors.email}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-2">
-                      {t("form.phone")}
-                    </label>
-                    <input
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder={t("form.phone_placeholder")}
-                      className="w-full bg-white/3 border border-white/8 text-steel text-sm px-4 py-3.5 outline-none focus:border-gold/50 transition-colors placeholder:text-white/20"
-                    />
-                  </div>
-                </div>
-
+            <form onSubmit={handleSubmit} noValidate>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label className="block text-[11px] font-semibold tracking-[0.15em] uppercase text-white/30 mb-2">
-                    {t("form.message")} *
+                  <label className="block text-[10px] font-bold tracking-[0.2em] uppercase text-steel-dark/80 mb-3">
+                    {t("form.name")} *
                   </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
-                    rows={5}
-                    placeholder={t("form.message_placeholder")}
-                    className={`w-full bg-white/3 border ${
-                      errors.message ? "border-red-500/50" : "border-white/8"
-                    } text-steel text-sm px-4 py-3.5 outline-none focus:border-gold/50 transition-colors resize-none placeholder:text-white/20`}
+                    className={`w-full bg-bg-2 border ${
+                      errors.name ? "border-red-500" : "border-white/10"
+                    } px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors`}
                   />
-                  {errors.message && (
-                    <p className="mt-1.5 text-xs text-red-400">{errors.message}</p>
+                  {errors.name && (
+                    <p className="mt-2 text-xs text-red-400">{errors.name}</p>
                   )}
                 </div>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full flex items-center justify-center gap-3 py-4 bg-gradient-to-r from-gold to-gold-light text-bg text-[13px] font-black tracking-[0.1em] uppercase clip-cut-all hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? "Küldés..." : t("form.submit")} <Send size={15} />
-                </button>
-              </form>
-            )}
+                <div>
+                  <label className="block text-[10px] font-bold tracking-[0.2em] uppercase text-steel-dark/80 mb-3">
+                    {t("form.company")}
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full bg-bg-2 border border-white/10 px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-[10px] font-bold tracking-[0.2em] uppercase text-steel-dark/80 mb-3">
+                    {t("form.email")} *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full bg-bg-2 border ${
+                      errors.email ? "border-red-500" : "border-white/10"
+                    } px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors`}
+                  />
+                  {errors.email && (
+                    <p className="mt-2 text-xs text-red-400">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label className="block text-[10px] font-bold tracking-[0.2em] uppercase text-steel-dark/80 mb-3">
+                    {t("form.phone")}
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full bg-bg-2 border border-white/10 px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors"
+                  />
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-[10px] font-bold tracking-[0.2em] uppercase text-steel-dark/80 mb-3">
+                  {t("form.message")} *
+                </label>
+                <textarea
+                  name="message"
+                  rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`w-full bg-bg-2 border ${
+                    errors.message ? "border-red-500" : "border-white/10"
+                  } px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors resize-none`}
+                />
+                {errors.message && (
+                  <p className="mt-2 text-xs text-red-400">{errors.message}</p>
+                )}
+              </div>
+
+              <div className="mb-6">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    name="privacyAccepted"
+                    checked={formData.privacyAccepted}
+                    onChange={handleChange}
+                    className="mt-1 w-4 h-4 bg-bg-2 border border-white/10 checked:bg-gold checked:border-gold focus:outline-none focus:ring-2 focus:ring-gold/50 transition-colors cursor-pointer"
+                  />
+                  <span className="text-sm text-steel-dark leading-relaxed">
+                    {t("form.privacy_prefix")}{" "}
+                    <Link
+                      href={`/${currentLocale}/${privacyUrls[currentLocale] || "adatkezeles"}`}
+                      className="text-gold hover:text-gold-light underline"
+                      target="_blank"
+                    >
+                      {t("form.privacy_link")}
+                    </Link>
+                    {t("form.privacy_suffix")}
+                  </span>
+                </label>
+                {errors.privacyAccepted && (
+                  <p className="mt-2 text-xs text-red-400">
+                    {errors.privacyAccepted}
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-gradient-to-r from-gold to-gold-light text-bg px-8 py-4 text-[12px] font-bold tracking-[0.1em] uppercase clip-cut-all hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {loading ? t("form.sending") : t("form.submit")}
+                {!loading && <Send size={16} />}
+              </button>
+            </form>
           </div>
         </div>
       </div>

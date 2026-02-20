@@ -13,6 +13,63 @@
     "description": "Professzionális CNC esztergálás és marás Nagykanizsán. Egyedi és sorozatgyártás, sürgős megrendelések. Megbízható partner az ipari alkatrészgyártásban.",
     "keywords": "CNC esztergálás, CNC marás, Nagykanizsa, alkatrészgyártás, fémipari munkák, hegesztés, gépelemek"
   },
+  "privacy": {
+    "meta_title": "Adatkezelési Tájékoztató - SzelTech",
+    "meta_description": "Adatkezelési tájékoztató és adatvédelmi szabályzat a SzelTech weboldalára vonatkozóan.",
+    "title": "Adatkezelési Tájékoztató",
+    "last_updated": "Utolsó frissítés",
+    "sections": {
+      "intro": {
+        "title": "Bevezetés",
+        "content": "A Szélig Zoltán Egyéni Vállalkozó (továbbiakban: Adatkezelő) elkötelezett a személyes adatok védelmében és a GDPR előírásainak betartásában. Jelen tájékoztató célja, hogy részletes információt nyújtson arról, hogyan kezeljük az Ön által megadott adatokat."
+      },
+      "controller": {
+        "title": "Adatkezelő",
+        "tax": "Közösségi adószám",
+        "reg": "Ev nyilvántartási szám",
+        "email": "E-mail",
+        "phone": "Telefon"
+      },
+      "data_collected": {
+        "title": "Kezelt Adatok",
+        "content": "A kapcsolatfelvételi űrlapon keresztül az alábbi adatokat gyűjtjük:",
+        "items": [
+          "Név (kötelező)",
+          "E-mail cím (kötelező)",
+          "Cégnév (opcionális)",
+          "Telefonszám (opcionális)",
+          "Üzenet tartalma (kötelező)"
+        ]
+      },
+      "purpose": {
+        "title": "Adatkezelés Célja",
+        "content": "Az Ön által megadott adatokat kizárólag az Ön megkeresésére való válaszadás és ajánlatkészítés céljából kezeljük. Az adatokat nem használjuk marketing célokra és nem adjuk át harmadik félnek."
+      },
+      "legal_basis": {
+        "title": "Adatkezelés Jogalapja",
+        "content": "Az adatkezelés jogalapja az Ön önkéntes hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont), amelyet a kapcsolatfelvételi űrlap elküldésével ad meg."
+      },
+      "storage": {
+        "title": "Adatok Tárolása",
+        "content": "Az Ön által megadott adatokat elektronikus formában tároljuk, biztonságos szervereken. Az adatokat az ügyintézést követően legfeljebb 1 évig őrizzük meg, vagy töröljük az Ön kérésére."
+      },
+      "rights": {
+        "title": "Az Ön Jogai",
+        "content": "Az adatkezeléssel kapcsolatban Önt az alábbi jogok illetik meg:",
+        "items": [
+          "Hozzáférés: tájékoztatást kérhet az általunk kezelt adatairól",
+          "Helyesbítés: kérheti az adatai javítását",
+          "Törlés: kérheti az adatai törlését",
+          "Korlátozás: kérheti az adatkezelés korlátozását",
+          "Tiltakozás: tiltakozhat az adatkezelés ellen"
+        ]
+      },
+      "contact": {
+        "title": "Kapcsolat",
+        "content": "Amennyiben kérdése van az adatkezeléssel kapcsolatban, vagy élni szeretne valamelyik jogával, kérjük, vegye fel velünk a kapcsolatot az szeligfem@gmail.com e-mail címen."
+      }
+    }
+  },
   "hero": {
     "eyebrow": "CNC Esztergálás & Marás",
     "title1": "Minőség.",
@@ -151,11 +208,17 @@
     "subtext": "Munkanapokon jellemzően 24 órán belül visszajelzünk. Sürgős esetben hívjon telefonon.",
     "quote": "Egy precíz alkatrész mögött mindig egy precíz csapat áll.",
     "details": {
+      "email_label": "E-mail",
+      "phone_label": "Telefon",
+      "address_label": "Cím",
       "email": "szeligfem@gmail.com",
       "phone": "+36 20 427 6211",
       "address": "Nagykanizsa, Csengery út 111."
     },
     "form": {
+          "privacy_prefix": "Elfogadom az",
+          "privacy_link": "Adatkezelési Tájékoztatót",
+          "privacy_suffix": ".",
       "name": "Név",
       "company": "Cégnév",
       "email": "Email",
@@ -170,6 +233,7 @@
       "success_title": "Köszönjük!",
       "success_text": "Üzenetét megkaptuk. Hamarosan felvesszük Önnel a kapcsolatot.",
       "errors": {
+        "privacy": "Az adatkezelési tájékoztató elfogadása kötelező",
         "name_required": "Név megadása kötelező",
         "name_min": "Legalább 2 karakter szükséges",
         "email_required": "Email cím megadása kötelező",

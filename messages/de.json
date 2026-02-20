@@ -13,6 +13,63 @@
     "description": "Professionelle CNC-Dreh- und Fräsarbeiten in Ungarn. Einzel- und Serienfertigung, Eilaufträge möglich. Zuverlässiger Partner in der Industriefertigung.",
     "keywords": "CNC-Drehen, CNC-Fräsen, Ungarn, Teilefertigung, Metallarbeiten, Schweißen, Maschinenelemente"
   },
+  "privacy": {
+    "meta_title": "Datenschutzerklärung - SzelTech",
+    "meta_description": "Datenschutzerklärung und Datenschutzinformationen für die SzelTech-Website.",
+    "title": "Datenschutzerklärung",
+    "last_updated": "Zuletzt aktualisiert",
+    "sections": {
+      "intro": {
+        "title": "Einleitung",
+        "content": "Szélig Zoltán Einzelunternehmen (im Folgenden: Datenverantwortlicher) verpflichtet sich zum Schutz personenbezogener Daten und zur Einhaltung der DSGVO-Vorschriften. Diese Erklärung soll detaillierte Informationen darüber geben, wie wir die von Ihnen bereitgestellten Daten verarbeiten."
+      },
+      "controller": {
+        "title": "Datenverantwortlicher",
+        "tax": "Steuernummer",
+        "reg": "Registrierungsnummer",
+        "email": "E-Mail",
+        "phone": "Telefon"
+      },
+      "data_collected": {
+        "title": "Erhobene Daten",
+        "content": "Über das Kontaktformular erheben wir folgende Daten:",
+        "items": [
+          "Name (erforderlich)",
+          "E-Mail-Adresse (erforderlich)",
+          "Firmenname (optional)",
+          "Telefonnummer (optional)",
+          "Nachrichteninhalt (erforderlich)"
+        ]
+      },
+      "purpose": {
+        "title": "Zweck der Datenverarbeitung",
+        "content": "Die von Ihnen bereitgestellten Daten werden ausschließlich zur Beantwortung Ihrer Anfrage und zur Angebotserstellung verwendet. Wir verwenden die Daten nicht für Marketingzwecke und geben sie nicht an Dritte weiter."
+      },
+      "legal_basis": {
+        "title": "Rechtsgrundlage",
+        "content": "Die Rechtsgrundlage für die Datenverarbeitung ist Ihre freiwillige Einwilligung (DSGVO Art. 6 Abs. 1 lit. a), die Sie durch das Absenden des Kontaktformulars erteilen."
+      },
+      "storage": {
+        "title": "Datenspeicherung",
+        "content": "Die von Ihnen bereitgestellten Daten werden elektronisch auf sicheren Servern gespeichert. Wir bewahren die Daten maximal 1 Jahr nach Bearbeitung Ihrer Anfrage auf oder löschen sie auf Ihre Anfrage."
+      },
+      "rights": {
+        "title": "Ihre Rechte",
+        "content": "In Bezug auf die Datenverarbeitung haben Sie folgende Rechte:",
+        "items": [
+          "Auskunft: Sie können Informationen über die von uns verarbeiteten Daten anfordern",
+          "Berichtigung: Sie können die Korrektur Ihrer Daten verlangen",
+          "Löschung: Sie können die Löschung Ihrer Daten verlangen",
+          "Einschränkung: Sie können die Einschränkung der Verarbeitung verlangen",
+          "Widerspruch: Sie können der Datenverarbeitung widersprechen"
+        ]
+      },
+      "contact": {
+        "title": "Kontakt",
+        "content": "Wenn Sie Fragen zur Datenverarbeitung haben oder eines Ihrer Rechte ausüben möchten, kontaktieren Sie uns bitte unter szeligfem@gmail.com."
+      }
+    }
+  },
   "hero": {
     "eyebrow": "CNC-Drehen & Fräsen",
     "title1": "Präzision.",
@@ -151,6 +208,9 @@
     "subtext": "An Werktagen antworten wir in der Regel innerhalb von 24 Stunden. In dringenden Fällen rufen Sie uns bitte an.",
     "quote": "Hinter einem präzisen Bauteil steht immer ein präzises Team.",
     "details": {
+      "email_label": "E-Mail",
+      "phone_label": "Telefon",
+      "address_label": "Adresse",
       "email": "szeligfem@gmail.com",
       "phone": "+36 20 427 6211",
       "address": "Nagykanizsa, Csengery út 111., Ungarn"
@@ -169,7 +229,11 @@
       "submit": "Absenden",
       "success_title": "Vielen Dank!",
       "success_text": "Ihre Nachricht wurde empfangen. Wir werden uns bald bei Ihnen melden.",
+      "privacy_prefix": "Ich akzeptiere die",
+      "privacy_link": "Datenschutzerklärung",
+      "privacy_suffix": ".",
       "errors": {
+        "privacy": "Die Annahme der Datenschutzerklärung ist erforderlich",
         "name_required": "Name ist erforderlich",
         "name_min": "Mindestens 2 Zeichen erforderlich",
         "email_required": "E-Mail-Adresse ist erforderlich",
