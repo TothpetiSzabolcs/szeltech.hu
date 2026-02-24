@@ -1,108 +1,196 @@
-import { Resend } from "resend";
 import { NextResponse } from "next/server";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, company, email, phone, message } = body;
+    const { name, company, email, phone, message } = await request.json();
 
-    const { data, error } = await resend.emails.send({
-      from: "SzelTech Website <onboarding@resend.dev>",
-      to: ["szeligfem@gmail.com"],
-      replyTo: email,
-      subject: `Új ajánlatkérés: ${name}${company ? ` (${company})` : ""}`,
-      html: `
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>
-            body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f5f5f5; }
-            .container { max-width: 600px; margin: 40px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-            .header { background: linear-gradient(135deg, #0a0b0d 0%, #1a1b21 100%); padding: 40px 30px; text-align: center; border-bottom: 3px solid #c0a060; }
-            .logo { font-size: 28px; font-weight: 900; letter-spacing: 0.1em; color: #e8ecf0; text-transform: uppercase; margin: 0; }
-            .logo span { color: #c0a060; }
-            .content { padding: 40px 30px; }
-            .title { font-size: 22px; font-weight: 700; color: #0a0b0d; margin: 0 0 24px 0; }
-            .notice { background: #fff8e6; border-left: 4px solid #c0a060; padding: 16px; margin-bottom: 32px; font-size: 14px; color: #6b5d3f; }
-            .field { margin-bottom: 20px; }
-            .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #8c95a0; margin-bottom: 6px; }
-            .value { font-size: 15px; color: #0a0b0d; font-weight: 500; }
-            .message-box { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 6px; padding: 20px; margin-top: 24px; }
-            .message-text { font-size: 15px; line-height: 1.7; color: #2a2a2a; white-space: pre-wrap; }
-            .footer { background: #f8f9fa; padding: 24px 30px; text-align: center; border-top: 1px solid #e0e0e0; }
-            .footer-text { font-size: 12px; color: #8c95a0; margin: 0; }
-            .divider { height: 1px; background: #e0e0e0; margin: 32px 0; }
-          </style>
-        </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1 class="logo">Szélig <span>Tech</span></h1>
-            </div>
-            
-            <div class="content">
-              <h2 class="title">Új ajánlatkérés érkezett</h2>
-                            
-              <div class="field">
-                <div class="label">Név</div>
-                <div class="value">${name}</div>
-              </div>
-              
-              ${
-                company
-                  ? `
-              <div class="field">
-                <div class="label">Cégnév</div>
-                <div class="value">${company}</div>
-              </div>
-              `
-                  : ""
-              }
-              
-              <div class="field">
-                <div class="label">Email cím</div>
-                <div class="value"><a href="mailto:${email}" style="color: #c0a060; text-decoration: none;">${email}</a></div>
-              </div>
-              
-              ${
-                phone
-                  ? `
-              <div class="field">
-                <div class="label">Telefonszám</div>
-                <div class="value"><a href="tel:${phone}" style="color: #c0a060; text-decoration: none;">${phone}</a></div>
-              </div>
-              `
-                  : ""
-              }
-              
-              <div class="divider"></div>
-              
-              <div class="label" style="margin-bottom: 12px;">Üzenet</div>
-              <div class="message-box">
-                <div class="message-text">${message.replace(/\n/g, "<br>")}</div>
-              </div>
-            </div>
-            
-            <div class="footer">
-              <p class="footer-text">© ${new Date().getFullYear()} Szélig Tech · Precíziós CNC esztergálás és marás</p>
-              <p class="footer-text" style="margin-top: 8px;">Nagykanizsa, Csengery út 111.</p>
-            </div>
-          </div>
-        </body>
-        </html>
-      `,
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
     });
 
-    if (error) {
-      return NextResponse.json({ error }, { status: 400 });
-    }
+    const emailHtml = `
+      <!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Új üzenet - SzelTech</title>
+  </head>
+  <body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0A0E12 0%, #1a1f26 50%, #0A0E12 100%); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td align="center" style="padding: 60px 20px;">
+          <table role="presentation" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">
+            
+            <!-- Header -->
+<tr>
+  <td align="center" style="background: linear-gradient(135deg, #0A0E12 0%, #1F2937 100%); padding: 50px 40px;">
+    <h1 style="margin: 0; color: #E8E8E8; font-size: 38px; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase;">
+      SZEL<span style="color: #C0A060;">TECH</span>
+    </h1>
+    <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #C0A060 0%, #D4B574 50%, #C0A060 100%); margin: 24px auto 0; border-radius: 2px;"></div>
+  </td>
+</tr>
 
-    return NextResponse.json({ success: true, data });
+<!-- Gradient Border Strip -->
+<tr>
+  <td style="height: 6px; background: linear-gradient(90deg, #0A0E12 0%, #1F2937 20%, #C0A060 50%, #1F2937 80%, #0A0E12 100%); padding: 0;"></td>
+</tr>
+
+            <!-- Title -->
+            <tr>
+              <td align="center" style="padding: 48px 40px 36px; background-color: #ffffff;">
+                <h2 style="margin: 0 0 14px; color: #0A0E12; font-size: 28px; font-weight: 900; letter-spacing: -0.02em;">
+                  Új kapcsolatfelvételi üzenet
+                </h2>
+                <p style="margin: 0; color: #6B7280; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em;">
+                  szeltech.hu weboldalról
+                </p>
+              </td>
+            </tr>
+
+            <!-- Content -->
+            <tr>
+              <td style="padding: 0 40px 48px;">
+                
+                <!-- Name -->
+                <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
+                  <tr>
+                    <td align="center" style="padding-bottom: 32px; border-bottom: 2px solid #F3F4F6;">
+                      <p style="margin: 0 0 12px; color: #0A0E12; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em;">
+                        NÉV
+                      </p>
+                      <p style="margin: 0; color: #C0A060; font-size: 20px; font-weight: 800;">
+                        ${name}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Company (if provided) -->
+                ${
+                  company
+                    ? `
+                <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
+                  <tr>
+                    <td align="center" style="padding-bottom: 32px; border-bottom: 2px solid #F3F4F6;">
+                      <p style="margin: 0 0 12px; color: #0A0E12; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em;">
+                        CÉGNÉV
+                      </p>
+                      <p style="margin: 0; color: #C0A060; font-size: 20px; font-weight: 800;">
+                        ${company}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                `
+                    : ""
+                }
+
+                <!-- Email -->
+                <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
+                  <tr>
+                    <td align="center" style="padding-bottom: 32px; border-bottom: 2px solid #F3F4F6;">
+                      <p style="margin: 0 0 12px; color: #0A0E12; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em;">
+                        E-MAIL CÍM
+                      </p>
+                      <p style="margin: 0;">
+                        <a href="mailto:${email}" style="color: #C0A060; font-size: 18px; font-weight: 800; text-decoration: none;">
+                          ${email}
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Phone (if provided) -->
+                ${
+                  phone
+                    ? `
+                <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 32px;">
+                  <tr>
+                    <td align="center" style="padding-bottom: 32px; border-bottom: 2px solid #F3F4F6;">
+                      <p style="margin: 0 0 12px; color: #0A0E12; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em;">
+                        TELEFONSZÁM
+                      </p>
+                      <p style="margin: 0;">
+                        <a href="tel:${phone.replace(/\s+/g, "")}" style="color: #C0A060; font-size: 19px; font-weight: 800; text-decoration: none; letter-spacing: 0.08em;">
+                          ${phone.includes("+36") ? phone.replace(/\+36\s?(\d{2})\s?(\d{3})\s?(\d{4})/, "+36 ($1) $2-$3") : phone}
+                        </a>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+                `
+                    : ""
+                }
+
+                <!-- Message Box -->
+                <table role="presentation" style="width: 100%; border-collapse: collapse; margin-bottom: 36px;">
+                  <tr>
+                    <td style="background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%); border-left: 6px solid #C0A060; padding: 32px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                      <p style="margin: 0 0 16px; color: #0A0E12; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.25em; text-align: center;">
+                        ÜZENET
+                      </p>
+                      <p style="margin: 0; color: #1F2937; font-size: 15px; line-height: 1.8; text-align: left; white-space: pre-wrap;">
+${message}
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- CTA Button -->
+                <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td align="center">
+                      <a href="mailto:${email}" style="display: inline-block; background: linear-gradient(135deg, #C0A060 0%, #D4B574 100%); color: #0A0E12; padding: 18px 48px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; border-radius: 10px; box-shadow: 0 8px 24px rgba(192, 160, 96, 0.4);">
+                        ✉️ VÁLASZ KÜLDÉSE
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td align="center" style="background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%); padding: 36px 40px; border-top: 1px solid #E5E7EB;">
+                <p style="margin: 0 0 12px; color: #6B7280; font-size: 13px; line-height: 1.7;">
+                  Ez az üzenet automatikusan generált a <strong style="color: #0A0E12;">szeltech.hu</strong> weboldalról.
+                </p>
+                <p style="margin: 0; color: #9CA3AF; font-size: 12px; font-weight: 700;">
+                  © ${new Date().getFullYear()} SzelTech · Szélig Zoltán E.V.
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+    `;
+
+    await transporter.sendMail({
+      from: `"SzelTech Website" <${process.env.SMTP_FROM}>`,
+      to: process.env.SMTP_TO,
+      replyTo: email,
+      subject: `🔔 Új üzenet: ${name}${company ? ` (${company})` : ""}`,
+      html: emailHtml,
+    });
+
+    return NextResponse.json({ success: true });
   } catch (error) {
+    console.error("Email send error:", error);
     return NextResponse.json(
       { error: "Failed to send email" },
       { status: 500 },
