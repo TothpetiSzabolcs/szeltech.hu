@@ -13,14 +13,24 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  const baseUrl = "https://szeltech.hu";
 
   return {
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        hu: `${baseUrl}/hu`,
+        en: `${baseUrl}/en`,
+        de: `${baseUrl}/de`,
+      },
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
+      url: `${baseUrl}/${locale}`,
       locale: locale === "hu" ? "hu_HU" : locale === "de" ? "de_DE" : "en_US",
       type: "website",
     },
@@ -46,8 +56,15 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
