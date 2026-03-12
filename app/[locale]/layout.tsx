@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "../globals.css";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 
 export async function generateMetadata({
   params,
@@ -67,6 +68,21 @@ export default async function LocaleLayout({
           rel="stylesheet"
         />
         <Script
+          id="gtm-consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied',
+          'wait_for_update': 500
+        });
+      `,
+          }}
+        />
+        <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -91,6 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <CookieBanner locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>
