@@ -36,6 +36,10 @@ export function CookieBanner({ locale }: { locale: string }) {
     const consent = localStorage.getItem("cookie_consent");
     if (!consent) setVisible(true);
     setMounted(true);
+  
+    const handleReopen = () => setVisible(true);
+    window.addEventListener("open-cookie-banner", handleReopen);
+    return () => window.removeEventListener("open-cookie-banner", handleReopen);
   }, []);
 
   const handleAccept = () => {

@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { navLinks } from "@/data/navigation";
 
 export function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const locale = useLocale();
 
   return (
     <footer className="bg-bg-2 border-t border-white/5">
@@ -60,6 +61,25 @@ export function Footer() {
           <p className="text-xs text-white/20 tracking-widest uppercase">
             © {new Date().getFullYear()} SzelTech. {t("rights")}
           </p>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href={`/${locale}/adatkezeles`}
+              className="text-xs text-white/30 hover:text-gold/60 tracking-widest uppercase transition-colors"
+            >
+              {t("privacy")}
+            </Link>
+            <span className="text-white/10">|</span>
+            <button
+              onClick={() =>
+                window.dispatchEvent(new Event("open-cookie-banner"))
+              }
+              className="text-xs text-white/30 hover:text-gold/60 tracking-widest uppercase transition-colors"
+            >
+              {t("cookies")}
+            </button>
+          </div>
+
           <div className="flex items-center gap-2">
             <span className="block w-4 h-px bg-gold/40" />
             <span className="text-xs text-gold/40 tracking-widest uppercase font-semibold">
