@@ -84,7 +84,14 @@ export function Contact() {
 
       if (!response.ok) throw new Error("Failed to send email");
 
+      window.dataLayer?.push({
+        event: "form_submit",
+        form_name: "contact_form",
+        locale: currentLocale,
+      });
+
       setSuccess(true);
+
       setTimeout(() => {
         setFormData({
           name: "",
@@ -132,7 +139,6 @@ export function Contact() {
     <section id="kapcsolat" className="py-28 lg:py-36 bg-bg-2">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Bal oldal - mindig látható */}
           <div>
             <SectionHeader
               eyebrow={t("eyebrow")}
@@ -149,6 +155,12 @@ export function Contact() {
                 </p>
                 <a
                   href={`mailto:${t("details.email")}`}
+                  onClick={() =>
+                    window.dataLayer?.push({
+                      event: "email_click",
+                      email_address: t("details.email"),
+                    })
+                  }
                   className="text-lg text-steel-chrome hover:text-gold transition-colors"
                 >
                   {t("details.email")}
@@ -161,6 +173,12 @@ export function Contact() {
                 </p>
                 <a
                   href={`tel:${t("details.phone")}`}
+                  onClick={() =>
+                    window.dataLayer?.push({
+                      event: "phone_click",
+                      phone_number: t("details.phone"),
+                    })
+                  }
                   className="text-lg text-steel-chrome hover:text-gold transition-colors"
                 >
                   {t("details.phone")}
@@ -183,7 +201,6 @@ export function Contact() {
             </blockquote>
           </div>
 
-          {/* Jobb oldal - form VAGY success message */}
           <div className="bg-bg rounded-xl border border-white/5 p-8 lg:p-10">
             {success ? (
               <div className="text-center py-12">
@@ -221,9 +238,7 @@ export function Contact() {
                         } px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors`}
                       />
                       {errors.name && (
-                        <p className="mt-2 text-xs text-red-400">
-                          {errors.name}
-                        </p>
+                        <p className="mt-2 text-xs text-red-400">{errors.name}</p>
                       )}
                     </div>
 
@@ -256,9 +271,7 @@ export function Contact() {
                         } px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors`}
                       />
                       {errors.email && (
-                        <p className="mt-2 text-xs text-red-400">
-                          {errors.email}
-                        </p>
+                        <p className="mt-2 text-xs text-red-400">{errors.email}</p>
                       )}
                     </div>
 
@@ -290,9 +303,7 @@ export function Contact() {
                       } px-4 py-3 text-steel-chrome focus:outline-none focus:border-gold transition-colors resize-none`}
                     />
                     {errors.message && (
-                      <p className="mt-2 text-xs text-red-400">
-                        {errors.message}
-                      </p>
+                      <p className="mt-2 text-xs text-red-400">{errors.message}</p>
                     )}
                   </div>
 
@@ -313,7 +324,7 @@ export function Contact() {
                           target="_blank"
                         >
                           {t("form.privacy_link")}
-                        </Link>
+                        </Link>{" "}
                         {t("form.privacy_suffix")}
                       </span>
                     </label>
