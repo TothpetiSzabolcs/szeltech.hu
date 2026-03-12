@@ -83,6 +83,79 @@ export default async function LocaleLayout({
           }}
         />
         <Script
+          id="schema-org"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "SzelTech – Szélig Zoltán Egyéni Vállalkozó",
+              description:
+                "Professzionális CNC esztergálás és marás Nagykanizsán. Egyedi és sorozatgyártás, sürgős megrendelések.",
+              url: "https://szeltech.hu",
+              telephone: "+36204276211",
+              email: "szeligfem@gmail.com",
+              vatID: "HU69454127",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Csengery út 111.",
+                addressLocality: "Nagykanizsa",
+                addressCountry: "HU",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 46.459,
+                longitude: 16.9897,
+              },
+              priceRange: "$$",
+              image: "https://szeltech.hu/og.png",
+              sameAs: [],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "CNC Megmunkálási Szolgáltatások",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "CNC forgácsolás",
+                      description:
+                        "Precíz CNC esztergálási és marási megoldások kis-, közepes, valamint nagyobb szériákhoz is.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Fémipari szerelési és hegesztési munkák",
+                      description:
+                        "Kiegészítő fémipari munkák a gyártási és összeállítási folyamat részeként.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Gépelemek és funkcionális részegységek",
+                      description:
+                        "Komplett gépelemek és funkcionális részegységek gyártása és összeállítása.",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Komplex megoldások egy kézből",
+                      description:
+                        "Megbízható, rugalmas kivitelezés a gyártástól az összeállításig.",
+                    },
+                  },
+                ],
+              },
+            }),
+          }}
+        />
+        <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
